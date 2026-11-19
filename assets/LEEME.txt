@@ -1,0 +1,35 @@
+AFTER THE HYPE — ASSET KIT DE MARCA (Lima y Azul)
+
+Carpetas
+  01_Logo-Horizontal  Lockup principal (isotipo + wordmark)
+  02_Logo-Vertical    Isotipo sobre wordmark
+  03_Isotipo          Solo el símbolo AH
+  04_Favicon-AppIcon  favicon.ico/.svg, apple-touch-icon, app icons
+
+Formatos
+  SVG  Vector para web y producto
+  PDF  Vector para imprenta y documentos
+  PNG  Fondo transparente, 3 tamaños
+  JPG / PNG-Background  Logo con fondo de marca y área de respeto
+
+Versiones de color aprobadas (fondo transparente)
+  Navy  #111827  — sobre Cloud White, Electric Lime o Sky Blue
+  Black #000000  — sobre Cloud White
+  White #F7FAFC  — sobre Midnight Navy o fotografía oscura
+
+Paleta primaria
+  Cloud White    #F7FAFC  RGB 247 250 252  CMYK 2 1 0 1
+  Electric Lime  #DBFF00  RGB 219 255 0    CMYK 14 0 100 0
+  Midnight Navy  #111827  RGB 17 24 39     CMYK 56 38 0 85
+  Sky Blue       #59C1F2  RGB 89 193 242   CMYK 63 20 0 5
+
+Escala Midnight Navy (UI: fondos, texto, bordes) — tokens midnight-navy/100…950
+  100 #FFFFFF  200 #F9FAFB  250 #F3F4F6  300 #E5E7EB  400 #9CA3AF  500 #6B7280
+  600 #4B5563  700 #374151  800 #1F2937  900 #111827 (= Primary 03)  950 #0C111B
+  Fondo modo oscuro: Midnight Navy 950 · Fondo modo claro: Midnight Navy 100
+
+Escala Zinc (superficies secundarias, divisores, deshabilitado) — tokens zinc/100…900
+  100 #F4F4F8  200 #E4E4E7  300 #D4D4D8  400 #A1A1AA  500 #71717A
+  600 #52525B  700 #3F3F46  800 #27272A  900 #18181B
+
+No rehacer, estirar, recolorear ni aplicar degradados o sombras al logo.

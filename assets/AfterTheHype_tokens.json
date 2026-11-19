@@ -1,0 +1,234 @@
+{
+  "brand": "After the Hype",
+  "identity": "Lima y Azul",
+  "version": "1.0",
+  "principles": [
+    "Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos).",
+    "Midnight Navy es el color principal; Electric Lime es el acento.",
+    "Botones y controles (action): en Dark usan Electric Lime con texto midnight-navy/900; en Light usan midnight-navy/900 con texto cloud-white. Electric Lime con texto blanco no cumple contraste.",
+    "Electric Lime en Light solo para chips, badges y destacados (highlight), siempre con texto midnight-navy/900.",
+    "Usar tokens semánticos, no HEX, para que los componentes funcionen en light y dark.",
+    "Dark mode: fondo midnight-navy/950; light mode: fondo midnight-navy/100."
+  ],
+  "color": {
+    "brand": {
+      "cloud-white": "#F7FAFC",
+      "electric-lime": "#DBFF00",
+      "midnight-navy": "#111827",
+      "sky": "#59C1F2"
+    },
+    "midnight-navy": {
+      "100": "#FFFFFF",
+      "200": "#F9FAFB",
+      "250": "#F3F4F6",
+      "300": "#E5E7EB",
+      "400": "#9CA3AF",
+      "500": "#6B7280",
+      "600": "#4B5563",
+      "700": "#374151",
+      "800": "#1F2937",
+      "900": "#111827",
+      "950": "#0C111B"
+    },
+    "zinc": {
+      "100": "#F4F4F8",
+      "200": "#E4E4E7",
+      "300": "#D4D4D8",
+      "400": "#A1A1AA",
+      "500": "#71717A",
+      "600": "#52525B",
+      "700": "#3F3F46",
+      "800": "#27272A",
+      "900": "#18181B"
+    },
+    "deep-sky": "#1E6E96"
+  },
+  "semantic": {
+    "light": {
+      "bg/page": "{midnight-navy/100} #FFFFFF",
+      "bg/subtle": "{midnight-navy/200} #F9FAFB",
+      "bg/surface": "{midnight-navy/100} #FFFFFF",
+      "bg/muted": "{midnight-navy/250} #F3F4F6",
+      "bg/disabled": "{zinc/200} #E4E4E7",
+      "border/default": "{midnight-navy/300} #E5E7EB",
+      "border/strong": "{midnight-navy/400} #9CA3AF",
+      "text/primary": "{midnight-navy/900} #111827",
+      "text/secondary": "{midnight-navy/600} #4B5563",
+      "text/muted": "{midnight-navy/500} #6B7280",
+      "text/disabled": "{zinc/400} #A1A1AA",
+      "action/bg": "{midnight-navy/900} #111827",
+      "action/fg": "{cloud-white} #F7FAFC",
+      "highlight/bg": "{electric-lime} #DBFF00",
+      "highlight/fg": "{midnight-navy/900} #111827",
+      "link": "{deep-sky} #1E6E96",
+      "focus/ring": "{sky} #59C1F2"
+    },
+    "dark": {
+      "bg/page": "{midnight-navy/950} #0C111B",
+      "bg/subtle": "{midnight-navy/900} #111827",
+      "bg/surface": "{midnight-navy/900} #111827",
+      "bg/muted": "{midnight-navy/800} #1F2937",
+      "bg/disabled": "{zinc/800} #27272A",
+      "border/default": "{midnight-navy/800} #1F2937",
+      "border/strong": "{midnight-navy/700} #374151",
+      "text/primary": "{cloud-white} #F7FAFC",
+      "text/secondary": "{midnight-navy/400} #9CA3AF",
+      "text/muted": "{midnight-navy/500} #6B7280",
+      "text/disabled": "{zinc/600} #52525B",
+      "action/bg": "{electric-lime} #DBFF00",
+      "action/fg": "{midnight-navy/900} #111827",
+      "highlight/bg": "{electric-lime} #DBFF00",
+      "highlight/fg": "{midnight-navy/900} #111827",
+      "link": "{sky} #59C1F2",
+      "focus/ring": "{sky} #59C1F2"
+    }
+  },
+  "typography": {
+    "family": "SF Pro",
+    "stack": "\"SF Pro Text\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Inter\",\"Segoe UI\",sans-serif",
+    "webFallback": "Inter",
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "scale": {
+      "display": {
+        "size": 56,
+        "lineHeight": 64,
+        "weight": 600,
+        "letterSpacing": "-0.02em",
+        "use": "Hero y portadas"
+      },
+      "h1": {
+        "size": 40,
+        "lineHeight": 48,
+        "weight": 600,
+        "letterSpacing": "-0.02em",
+        "use": "Título de página"
+      },
+      "h2": {
+        "size": 32,
+        "lineHeight": 40,
+        "weight": 600,
+        "letterSpacing": "-0.01em",
+        "use": "Título de sección"
+      },
+      "h3": {
+        "size": 24,
+        "lineHeight": 32,
+        "weight": 600,
+        "letterSpacing": "-0.01em",
+        "use": "Título de card o bloque"
+      },
+      "h4": {
+        "size": 20,
+        "lineHeight": 28,
+        "weight": 600,
+        "letterSpacing": "0",
+        "use": "Subtítulo"
+      },
+      "body-lg": {
+        "size": 18,
+        "lineHeight": 28,
+        "weight": 400,
+        "letterSpacing": "0",
+        "use": "Intro, texto destacado"
+      },
+      "body": {
+        "size": 16,
+        "lineHeight": 24,
+        "weight": 400,
+        "letterSpacing": "0",
+        "use": "Texto base"
+      },
+      "body-sm": {
+        "size": 14,
+        "lineHeight": 20,
+        "weight": 400,
+        "letterSpacing": "0",
+        "use": "Texto secundario, tablas"
+      },
+      "label": {
+        "size": 14,
+        "lineHeight": 16,
+        "weight": 500,
+        "letterSpacing": "0",
+        "use": "Botones, labels de formulario"
+      },
+      "caption": {
+        "size": 12,
+        "lineHeight": 16,
+        "weight": 500,
+        "letterSpacing": "0.01em",
+        "use": "Metadatos, ayudas"
+      }
+    }
+  },
+  "spacing": {
+    "0": 0,
+    "1": 8,
+    "2": 16,
+    "3": 24,
+    "4": 32,
+    "5": 40,
+    "6": 48,
+    "8": 64,
+    "10": 80,
+    "12": 96,
+    "16": 128,
+    "0.5": 4
+  },
+  "radius": {
+    "none": 0,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "full": 9999
+  },
+  "elevation": {
+    "e1": "0 1px 2px rgba(17,24,39,.06), 0 1px 1px rgba(17,24,39,.04)",
+    "e2": "0 4px 16px rgba(17,24,39,.08)",
+    "e3": "0 16px 48px rgba(17,24,39,.14)"
+  },
+  "layout": {
+    "container": 1280,
+    "breakpoints": {
+      "sm": {
+        "minWidth": 640,
+        "columns": 4,
+        "gutter": 16,
+        "margin": 16
+      },
+      "md": {
+        "minWidth": 768,
+        "columns": 8,
+        "gutter": 24,
+        "margin": 32
+      },
+      "lg": {
+        "minWidth": 1024,
+        "columns": 12,
+        "gutter": 24,
+        "margin": 48
+      },
+      "xl": {
+        "minWidth": 1280,
+        "columns": 12,
+        "gutter": 32,
+        "margin": 64
+      }
+    }
+  },
+  "logo": {
+    "primary": "Logo horizontal",
+    "clearspace": "Altura del isotipo alrededor del logo",
+    "approvedColors": {
+      "navy": "#111827",
+      "black": "#000000",
+      "white": "#F7FAFC"
+    }
+  }
+}

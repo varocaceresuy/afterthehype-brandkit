@@ -1,0 +1,626 @@
+[
+{
+"path": "assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_Navy.svg",
+"group": "horizontal",
+"kind": "color",
+"label": "Navy",
+"fmt": "SVG",
+"bytes": 9898
+},
+{
+"path": "assets/01_Logo-Horizontal/PDF/ATH_Logo-Horizontal_Navy.pdf",
+"group": "horizontal",
+"kind": "color",
+"label": "Navy",
+"fmt": "PDF",
+"bytes": 4574
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_Navy_1000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 1000px",
+"bytes": 20460
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_Navy_2000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 2000px",
+"bytes": 42316
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_Navy_4000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 4000px",
+"bytes": 89739
+},
+{
+"path": "assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_Black.svg",
+"group": "horizontal",
+"kind": "color",
+"label": "Black",
+"fmt": "SVG",
+"bytes": 9898
+},
+{
+"path": "assets/01_Logo-Horizontal/PDF/ATH_Logo-Horizontal_Black.pdf",
+"group": "horizontal",
+"kind": "color",
+"label": "Black",
+"fmt": "PDF",
+"bytes": 4559
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_Black_1000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 1000px",
+"bytes": 13046
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_Black_2000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 2000px",
+"bytes": 28172
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_Black_4000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 4000px",
+"bytes": 62738
+},
+{
+"path": "assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_White.svg",
+"group": "horizontal",
+"kind": "color",
+"label": "White",
+"fmt": "SVG",
+"bytes": 9898
+},
+{
+"path": "assets/01_Logo-Horizontal/PDF/ATH_Logo-Horizontal_White.pdf",
+"group": "horizontal",
+"kind": "color",
+"label": "White",
+"fmt": "PDF",
+"bytes": 4571
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_White_1000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 1000px",
+"bytes": 19493
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_White_2000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 2000px",
+"bytes": 40245
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG/ATH_Logo-Horizontal_White_4000px.png",
+"group": "horizontal",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 4000px",
+"bytes": 85923
+},
+{
+"path": "assets/01_Logo-Horizontal/JPG/ATH_Logo-Horizontal_Black-on-CloudWhite.jpg",
+"group": "horizontal",
+"kind": "combo",
+"label": "Black-on-CloudWhite",
+"fmt": "JPG",
+"bytes": 103674
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG-Background/ATH_Logo-Horizontal_Black-on-CloudWhite.png",
+"group": "horizontal",
+"kind": "combo",
+"label": "Black-on-CloudWhite",
+"fmt": "PNG fondo",
+"bytes": 67934
+},
+{
+"path": "assets/01_Logo-Horizontal/JPG/ATH_Logo-Horizontal_Navy-on-ElectricLime.jpg",
+"group": "horizontal",
+"kind": "combo",
+"label": "Navy-on-ElectricLime",
+"fmt": "JPG",
+"bytes": 121120
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG-Background/ATH_Logo-Horizontal_Navy-on-ElectricLime.png",
+"group": "horizontal",
+"kind": "combo",
+"label": "Navy-on-ElectricLime",
+"fmt": "PNG fondo",
+"bytes": 64893
+},
+{
+"path": "assets/01_Logo-Horizontal/JPG/ATH_Logo-Horizontal_White-on-MidnightNavy.jpg",
+"group": "horizontal",
+"kind": "combo",
+"label": "White-on-MidnightNavy",
+"fmt": "JPG",
+"bytes": 104490
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG-Background/ATH_Logo-Horizontal_White-on-MidnightNavy.png",
+"group": "horizontal",
+"kind": "combo",
+"label": "White-on-MidnightNavy",
+"fmt": "PNG fondo",
+"bytes": 68349
+},
+{
+"path": "assets/01_Logo-Horizontal/JPG/ATH_Logo-Horizontal_Navy-on-SkyBlue.jpg",
+"group": "horizontal",
+"kind": "combo",
+"label": "Navy-on-SkyBlue",
+"fmt": "JPG",
+"bytes": 115120
+},
+{
+"path": "assets/01_Logo-Horizontal/PNG-Background/ATH_Logo-Horizontal_Navy-on-SkyBlue.png",
+"group": "horizontal",
+"kind": "combo",
+"label": "Navy-on-SkyBlue",
+"fmt": "PNG fondo",
+"bytes": 67177
+},
+{
+"path": "assets/02_Logo-Vertical/SVG/ATH_Logo-Vertical_Navy.svg",
+"group": "vertical",
+"kind": "color",
+"label": "Navy",
+"fmt": "SVG",
+"bytes": 10076
+},
+{
+"path": "assets/02_Logo-Vertical/PDF/ATH_Logo-Vertical_Navy.pdf",
+"group": "vertical",
+"kind": "color",
+"label": "Navy",
+"fmt": "PDF",
+"bytes": 4574
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_Navy_1000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 1000px",
+"bytes": 36779
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_Navy_2000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 2000px",
+"bytes": 79979
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_Navy_4000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 4000px",
+"bytes": 173493
+},
+{
+"path": "assets/02_Logo-Vertical/SVG/ATH_Logo-Vertical_Black.svg",
+"group": "vertical",
+"kind": "color",
+"label": "Black",
+"fmt": "SVG",
+"bytes": 10076
+},
+{
+"path": "assets/02_Logo-Vertical/PDF/ATH_Logo-Vertical_Black.pdf",
+"group": "vertical",
+"kind": "color",
+"label": "Black",
+"fmt": "PDF",
+"bytes": 4561
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_Black_1000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 1000px",
+"bytes": 23908
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_Black_2000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 2000px",
+"bytes": 57950
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_Black_4000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 4000px",
+"bytes": 129349
+},
+{
+"path": "assets/02_Logo-Vertical/SVG/ATH_Logo-Vertical_White.svg",
+"group": "vertical",
+"kind": "color",
+"label": "White",
+"fmt": "SVG",
+"bytes": 10076
+},
+{
+"path": "assets/02_Logo-Vertical/PDF/ATH_Logo-Vertical_White.pdf",
+"group": "vertical",
+"kind": "color",
+"label": "White",
+"fmt": "PDF",
+"bytes": 4574
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_White_1000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 1000px",
+"bytes": 34472
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_White_2000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 2000px",
+"bytes": 75272
+},
+{
+"path": "assets/02_Logo-Vertical/PNG/ATH_Logo-Vertical_White_4000px.png",
+"group": "vertical",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 4000px",
+"bytes": 164882
+},
+{
+"path": "assets/02_Logo-Vertical/JPG/ATH_Logo-Vertical_Black-on-CloudWhite.jpg",
+"group": "vertical",
+"kind": "combo",
+"label": "Black-on-CloudWhite",
+"fmt": "JPG",
+"bytes": 180744
+},
+{
+"path": "assets/02_Logo-Vertical/PNG-Background/ATH_Logo-Vertical_Black-on-CloudWhite.png",
+"group": "vertical",
+"kind": "combo",
+"label": "Black-on-CloudWhite",
+"fmt": "PNG fondo",
+"bytes": 112588
+},
+{
+"path": "assets/02_Logo-Vertical/JPG/ATH_Logo-Vertical_Navy-on-ElectricLime.jpg",
+"group": "vertical",
+"kind": "combo",
+"label": "Navy-on-ElectricLime",
+"fmt": "JPG",
+"bytes": 204885
+},
+{
+"path": "assets/02_Logo-Vertical/PNG-Background/ATH_Logo-Vertical_Navy-on-ElectricLime.png",
+"group": "vertical",
+"kind": "combo",
+"label": "Navy-on-ElectricLime",
+"fmt": "PNG fondo",
+"bytes": 105745
+},
+{
+"path": "assets/02_Logo-Vertical/JPG/ATH_Logo-Vertical_White-on-MidnightNavy.jpg",
+"group": "vertical",
+"kind": "combo",
+"label": "White-on-MidnightNavy",
+"fmt": "JPG",
+"bytes": 182557
+},
+{
+"path": "assets/02_Logo-Vertical/PNG-Background/ATH_Logo-Vertical_White-on-MidnightNavy.png",
+"group": "vertical",
+"kind": "combo",
+"label": "White-on-MidnightNavy",
+"fmt": "PNG fondo",
+"bytes": 116964
+},
+{
+"path": "assets/02_Logo-Vertical/JPG/ATH_Logo-Vertical_Navy-on-SkyBlue.jpg",
+"group": "vertical",
+"kind": "combo",
+"label": "Navy-on-SkyBlue",
+"fmt": "JPG",
+"bytes": 196321
+},
+{
+"path": "assets/02_Logo-Vertical/PNG-Background/ATH_Logo-Vertical_Navy-on-SkyBlue.png",
+"group": "vertical",
+"kind": "combo",
+"label": "Navy-on-SkyBlue",
+"fmt": "PNG fondo",
+"bytes": 108134
+},
+{
+"path": "assets/03_Isotipo/SVG/ATH_Isotipo_Navy.svg",
+"group": "isotipo",
+"kind": "color",
+"label": "Navy",
+"fmt": "SVG",
+"bytes": 907
+},
+{
+"path": "assets/03_Isotipo/PDF/ATH_Isotipo_Navy.pdf",
+"group": "isotipo",
+"kind": "color",
+"label": "Navy",
+"fmt": "PDF",
+"bytes": 1314
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_Navy_512px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 512px",
+"bytes": 12164
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_Navy_1024px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 1024px",
+"bytes": 25688
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_Navy_2048px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "Navy",
+"fmt": "PNG 2048px",
+"bytes": 56854
+},
+{
+"path": "assets/03_Isotipo/SVG/ATH_Isotipo_Black.svg",
+"group": "isotipo",
+"kind": "color",
+"label": "Black",
+"fmt": "SVG",
+"bytes": 907
+},
+{
+"path": "assets/03_Isotipo/PDF/ATH_Isotipo_Black.pdf",
+"group": "isotipo",
+"kind": "color",
+"label": "Black",
+"fmt": "PDF",
+"bytes": 1305
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_Black_512px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 512px",
+"bytes": 6934
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_Black_1024px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 1024px",
+"bytes": 18215
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_Black_2048px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "Black",
+"fmt": "PNG 2048px",
+"bytes": 43034
+},
+{
+"path": "assets/03_Isotipo/SVG/ATH_Isotipo_White.svg",
+"group": "isotipo",
+"kind": "color",
+"label": "White",
+"fmt": "SVG",
+"bytes": 907
+},
+{
+"path": "assets/03_Isotipo/PDF/ATH_Isotipo_White.pdf",
+"group": "isotipo",
+"kind": "color",
+"label": "White",
+"fmt": "PDF",
+"bytes": 1313
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_White_512px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 512px",
+"bytes": 11078
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_White_1024px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 1024px",
+"bytes": 23712
+},
+{
+"path": "assets/03_Isotipo/PNG/ATH_Isotipo_White_2048px.png",
+"group": "isotipo",
+"kind": "color",
+"label": "White",
+"fmt": "PNG 2048px",
+"bytes": 52834
+},
+{
+"path": "assets/03_Isotipo/JPG/ATH_Isotipo_Black-on-CloudWhite.jpg",
+"group": "isotipo",
+"kind": "combo",
+"label": "Black-on-CloudWhite",
+"fmt": "JPG",
+"bytes": 103200
+},
+{
+"path": "assets/03_Isotipo/PNG-Background/ATH_Isotipo_Black-on-CloudWhite.png",
+"group": "isotipo",
+"kind": "combo",
+"label": "Black-on-CloudWhite",
+"fmt": "PNG fondo",
+"bytes": 59290
+},
+{
+"path": "assets/03_Isotipo/JPG/ATH_Isotipo_Navy-on-ElectricLime.jpg",
+"group": "isotipo",
+"kind": "combo",
+"label": "Navy-on-ElectricLime",
+"fmt": "JPG",
+"bytes": 111413
+},
+{
+"path": "assets/03_Isotipo/PNG-Background/ATH_Isotipo_Navy-on-ElectricLime.png",
+"group": "isotipo",
+"kind": "combo",
+"label": "Navy-on-ElectricLime",
+"fmt": "PNG fondo",
+"bytes": 55614
+},
+{
+"path": "assets/03_Isotipo/JPG/ATH_Isotipo_White-on-MidnightNavy.jpg",
+"group": "isotipo",
+"kind": "combo",
+"label": "White-on-MidnightNavy",
+"fmt": "JPG",
+"bytes": 103603
+},
+{
+"path": "assets/03_Isotipo/PNG-Background/ATH_Isotipo_White-on-MidnightNavy.png",
+"group": "isotipo",
+"kind": "combo",
+"label": "White-on-MidnightNavy",
+"fmt": "PNG fondo",
+"bytes": 63042
+},
+{
+"path": "assets/03_Isotipo/JPG/ATH_Isotipo_Navy-on-SkyBlue.jpg",
+"group": "isotipo",
+"kind": "combo",
+"label": "Navy-on-SkyBlue",
+"fmt": "JPG",
+"bytes": 107910
+},
+{
+"path": "assets/03_Isotipo/PNG-Background/ATH_Isotipo_Navy-on-SkyBlue.png",
+"group": "isotipo",
+"kind": "combo",
+"label": "Navy-on-SkyBlue",
+"fmt": "PNG fondo",
+"bytes": 56068
+},
+{
+"path": "assets/04_Favicon-AppIcon/ATH_AppIcon_Navy.svg",
+"group": "icon",
+"kind": "icon",
+"label": "App icon Navy",
+"fmt": "SVG",
+"bytes": 996
+},
+{
+"path": "assets/04_Favicon-AppIcon/ATH_AppIcon_Navy_1024px.png",
+"group": "icon",
+"kind": "icon",
+"label": "App icon 1024px",
+"fmt": "PNG 1024px",
+"bytes": 25675
+},
+{
+"path": "assets/04_Favicon-AppIcon/ATH_AppIcon_Navy_512px.png",
+"group": "icon",
+"kind": "icon",
+"label": "App icon 512px",
+"fmt": "PNG 512px",
+"bytes": 11459
+},
+{
+"path": "assets/04_Favicon-AppIcon/apple-touch-icon.png",
+"group": "icon",
+"kind": "icon",
+"label": "App icon 180px",
+"fmt": "PNG 180px",
+"bytes": 3786
+},
+{
+"path": "assets/04_Favicon-AppIcon/ATH_AppIcon_Lime.svg",
+"group": "icon",
+"kind": "icon",
+"label": "App icon Lime",
+"fmt": "SVG",
+"bytes": 996
+},
+{
+"path": "assets/04_Favicon-AppIcon/ATH_AppIcon_Lime_1024px.png",
+"group": "icon",
+"kind": "icon",
+"label": "App icon Lime 1024px",
+"fmt": "PNG 1024px",
+"bytes": 22076
+},
+{
+"path": "assets/04_Favicon-AppIcon/favicon.svg",
+"group": "icon",
+"kind": "icon",
+"label": "Favicon",
+"fmt": "SVG",
+"bytes": 1004
+},
+{
+"path": "assets/04_Favicon-AppIcon/favicon-32.png",
+"group": "icon",
+"kind": "icon",
+"label": "Favicon 32px",
+"fmt": "PNG 32px",
+"bytes": 1019
+},
+{
+"path": "assets/04_Favicon-AppIcon/favicon-16.png",
+"group": "icon",
+"kind": "icon",
+"label": "Favicon 16px",
+"fmt": "PNG 16px",
+"bytes": 447
+}
+]

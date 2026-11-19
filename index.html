@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>After the Hype — Brand Kit</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link rel="icon" href="assets/04_Favicon-AppIcon/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: brand handoff manual — calm, exact, product-grade; the brand's colours do the talking.
+   IDEA: a design-system reference app: fixed index on the left, each chapter a working spec.
+   PICTURE: logos on approved grounds, live swatches, a type ladder and spacing rulers drawn at real size.
+   COLOUR and TYPE: #080808 / Midnight Navy surfaces, Electric Lime accent, Sky for focus; SF Pro with Inter fallback.
+   LAYOUT: 272px sidebar with sliding indicator + spotlight; sticky top bar with theme switch; chapters stacked. */
+:root{color-scheme:dark;
+ --navy:#111827;--lime:#DBFF00;--sky:#59C1F2;--cloud:#F7FAFC;
+ --bg:#080808;--side:#0B0B0B;--card:#111111;--card2:#161616;--ink:#F7FAFC;--soft:#B5B5B5;--mute:#8A8A8A;--line:#1F1F1F;--line2:#2A2A2A;
+ --accent:#DBFF00;--on-accent:#111827;--r:16px;--sw:272px;
+ --sans:"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",system-ui,sans-serif}
+:root[data-mode=light]{color-scheme:light;--accent:#111827;--on-accent:#F7FAFC;--bg:#F9FAFB;--side:#FFFFFF;--card:#FFFFFF;--card2:#F3F4F6;--ink:#111827;--soft:#4B5563;--mute:#6B7280;--line:#E5E7EB;--line2:#D1D5DB}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:80px;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* sidebar */
+.side{position:fixed;inset:0 auto 0 0;width:var(--sw);background:var(--side);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:20;overflow:hidden}
+.side::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--mx,-300px) var(--my,-300px),color-mix(in srgb,var(--accent) 7%,transparent),transparent 70%);transition:opacity .3s}
+.brand{display:flex;align-items:center;gap:12px;padding:24px 24px 16px}
+.brand .mk{width:40px;height:40px;border-radius:10px;background:var(--navy);display:grid;place-items:center;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.brand .mk img{width:28px}
+.brand b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.brand small{display:block;font-size:12px;color:var(--mute)}
+.nav{position:relative;flex:1;overflow-y:auto;padding:8px 16px 24px;scrollbar-width:thin}
+.nav h6{margin:24px 8px 8px;font-size:12px;font-weight:500;color:var(--mute);letter-spacing:0}
+.nav h6:first-child{margin-top:8px}
+.nav a{position:relative;z-index:1;display:flex;align-items:center;gap:10px;min-height:36px;padding:0 10px;border-radius:8px;text-decoration:none;font-size:14px;color:var(--soft);transition:color .2s}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--ink);font-weight:500}
+.nav a:focus-visible{outline:2px solid var(--sky);outline-offset:-2px}
+.nav a i{width:6px;height:6px;border-radius:2px;background:var(--line2);flex:none;transition:background .2s,transform .2s}
+.nav a.on i{background:var(--accent);transform:rotate(45deg)}
+.pill{position:absolute;top:0;left:16px;right:16px;height:36px;border-radius:8px;background:var(--card2);box-shadow:inset 0 0 0 1px var(--line);transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s;opacity:0;pointer-events:none}
+.side-foot{padding:16px;border-top:1px solid var(--line);display:grid;gap:8px}
+.side-foot small{color:var(--mute);font-size:12px;text-align:center}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:10px;margin-bottom:4px}
+.fig-h{display:flex;align-items:center;gap:10px}
+.fig-h b{display:block;font-size:14px;font-weight:600}.fig-h small{display:block;text-align:left;font-size:12px}
+.fig-i{width:32px;height:32px;border-radius:8px;background:var(--card2);box-shadow:inset 0 0 0 1px var(--line2);display:grid;place-items:center;flex:none}
+.fig-i img{height:18px;width:auto}
+.pw{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mute);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 4px 4px 10px}
+.pw code{color:var(--ink);flex:1;font-size:13px}
+.cp{border:0;background:transparent;color:var(--mute);width:32px;height:32px;border-radius:6px;cursor:pointer;display:grid;place-items:center}
+.cp:hover{color:var(--ink);background:var(--card2)}.cp svg{width:15px;height:15px}
+.cp:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
+.fig-b{display:grid;grid-template-columns:1fr 1fr;gap:6px}.fig-b .btn.sm{padding:0 8px;font-size:12.5px;gap:4px}
+/* main */
+.main{margin-left:var(--sw)}
+.top{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 max(4vw,16px);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.crumb{font-size:14px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crumb b{color:var(--ink);font-weight:500}
+.menu{display:none;border:0;background:transparent;color:var(--ink);width:44px;height:44px;border-radius:8px;cursor:pointer}
+.mode{display:inline-flex;padding:4px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);flex:none}
+.mode button{font:500 13px/1 var(--sans);border:0;background:transparent;color:var(--mute);min-height:32px;padding:0 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.mode button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.mode svg{width:14px;height:14px}
+.band{padding:clamp(40px,5vw,72px) max(4vw,16px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1120px;margin:0 auto}
+.hero h1{font-size:clamp(32px,4.5vw,48px);line-height:1.05;margin:0 0 16px;font-weight:600;letter-spacing:-.025em;text-wrap:balance}
+.hero p{max-width:62ch;margin:0 0 24px;color:var(--soft)}
+.hero img.lockup{width:180px;height:auto;display:block;margin-bottom:32px;opacity:.9}
+.for-light{display:none!important}:root[data-mode=light] .for-light{display:block!important}:root[data-mode=light] .for-dark{display:none!important}
+.chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:32px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.chip b{display:block;font-size:24px;font-weight:600;letter-spacing:-.02em}
+.chip span{font-size:13px;color:var(--mute)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{font:600 15px/1 var(--sans);border:0;border-radius:8px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-decoration:none;color:var(--on-accent);background:var(--accent)}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.sm{min-height:36px;padding:0 12px;font-size:13px;font-weight:500;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.sm:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.btn:focus-visible,.st:focus-visible,.mode button:focus-visible,.menu:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.eyebrow{font-size:13px;color:var(--mute);margin:0 0 8px}
+h2{font-size:32px;line-height:1.1;margin:0 0 8px;font-weight:600;letter-spacing:-.02em}
+h3.sh{font-size:20px;line-height:1.2;font-weight:600;margin:40px 0 8px}
+.lead{color:var(--soft);margin:0 0 32px;max-width:66ch}
+.tag-p{display:inline-block;font-size:12px;font-weight:500;color:var(--navy);background:var(--lime);border-radius:999px;padding:2px 10px;margin-left:8px;vertical-align:middle}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.tile{border-radius:var(--r);aspect-ratio:4/3;display:grid;place-items:center;padding:12%;position:relative;border:1px solid var(--line)}
+.tile img{width:100%;height:100%;object-fit:contain}
+.tile span{position:absolute;left:12px;bottom:10px;font-size:12px;font-weight:500}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:4px 24px}
+.frow{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:center}
+.frow:first-child{border-top:0}
+.fname{display:flex;gap:12px;align-items:center;font-weight:500;font-size:15px}
+.dot{width:24px;height:24px;border-radius:50%;flex:none;border:1px solid var(--line2)}
+.fname small{display:block;font-weight:400;color:var(--mute);font-size:13px}
+.sec-foot{margin-top:16px}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-bottom:24px}
+.icon{display:grid;gap:8px;justify-items:center;text-align:center;font-size:13px;color:var(--mute)}
+.icon img{width:120px;height:120px;border-radius:28px}
+.icon img.fav{width:48px;height:48px;border-radius:10px;margin:36px 0}
+.pal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sw{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.sw .c{height:140px}
+.sw .t{padding:16px;font-size:14px;display:grid;gap:4px}
+.sw .t b{font-size:16px;font-weight:600}
+code,.mono{font:500 13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+.sw code{color:var(--mute)}
+.scale{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:8px}
+.st{border-radius:12px;min-height:104px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;border:1px solid var(--line);cursor:pointer;font:inherit;text-align:left}
+.st b{font-size:14px;font-weight:500}.st code{opacity:.75}.st .tag{font-size:12px;opacity:.75}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-weight:500;color:var(--mute);text-align:left;padding:12px 16px 12px 0;border-bottom:1px solid var(--line)}
+td{padding:12px 16px 12px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+.sv{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.sv span{width:20px;height:20px;border-radius:6px;border:1px solid var(--line2);flex:none}
+.spec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:16px}
+.specimen{font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;font-size:clamp(56px,9vw,112px);line-height:1;font-weight:600;letter-spacing:-.03em;margin:0}
+.weights{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;color:var(--soft);font-size:18px}
+.ladder .lr{display:grid;grid-template-columns:120px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.ladder .lr:last-child{border-bottom:0}
+.ladder .lr span:first-child{font-size:13px;color:var(--mute)}
+.ladder .lr span:last-child{font-size:13px;color:var(--mute);text-align:right;white-space:nowrap}
+.ladder .smp{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ruler .rr{display:grid;grid-template-columns:96px 56px minmax(0,1fr);gap:16px;align-items:center;padding:8px 0}
+.ruler .bar{height:16px;border-radius:4px;background:var(--accent)}
+.ruler .rr span{font-size:13px;color:var(--mute)}
+.radii{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.rad{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px}
+.rad div{height:88px;background:var(--navy);border:1px solid var(--line2)}
+:root[data-mode=light] .rad div{background:#E5E7EB}
+.rad b{font-size:14px;font-weight:500}.rad span{font-size:13px;color:var(--mute)}
+.elev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:32px;background:#F9FAFB;border-radius:var(--r);border:1px solid var(--line)}
+.elev div{background:#fff;border-radius:16px;height:112px;padding:16px;color:#111827;font-size:14px;display:flex;flex-direction:column;justify-content:flex-end}
+.elev div span{color:#6B7280;font-size:12px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.code{position:relative;background:#0C111B;color:#E5E7EB;border:1px solid var(--line);border-radius:var(--r);margin:0}
+.code pre{margin:0;padding:20px;max-height:420px;overflow:auto;font:500 12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
+.code .row{position:absolute;top:12px;right:12px}
+.code .btn.sm{background:#111827;color:#F7FAFC;box-shadow:inset 0 0 0 1px #374151}
+.tabs{display:inline-flex;gap:4px;padding:4px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+.tabs button{font:500 13px/1 var(--sans);border:0;background:transparent;color:var(--mute);min-height:32px;padding:0 12px;border-radius:7px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--card2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line2)}
+.dd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dd-h{display:flex;align-items:center;gap:10px}
+.bd{width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;font-size:13px;font-weight:700;flex:none}
+.bd.ok{background:#DBFF00;color:#111827}.bd.no{background:#E5484D;color:#fff}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.ex .stage{aspect-ratio:16/10;display:grid;place-items:center;position:relative;overflow:hidden}
+.ex .stage img{width:62%;height:auto}
+.ex .cap{padding:12px 16px 16px;font-size:14px;display:flex;gap:10px;align-items:flex-start}
+.ex .cap b{display:block;font-weight:500}.ex .cap span{color:var(--mute);font-size:13px}
+.ex .cap .bd{width:20px;height:20px;font-size:11px;margin-top:1px}
+.ex.no .stage::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 2px #E5484D;border-radius:var(--r) var(--r) 0 0;pointer-events:none}
+.cs{outline:1.5px dashed #59C1F2;outline-offset:0;padding:5.5%;width:70%;display:grid;place-items:center;position:relative}
+.cs img{width:100%!important}
+.cs i{position:absolute;font-style:normal;font-size:11px;color:#1E6E96;top:-18px;left:0}
+.mini{font:600 13px/1 var(--sans);border-radius:8px;padding:0 14px;height:36px;display:inline-flex;align-items:center}
+.split{display:grid;grid-template-columns:1fr 1fr;width:100%;height:100%}
+.split>div{display:grid;place-items:center}
+.lt{font:700 clamp(24px,3vw,36px)/1 var(--sans);letter-spacing:-.02em}
+@media(max-width:1100px){.dd{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.dd{grid-template-columns:1fr}}
+.rules ul{margin:0;padding-left:20px}.rules li{margin:8px 0;color:var(--soft)}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:8px;font-size:14px;transition:transform .25s;z-index:30}
+.toast.on{transform:translateX(-50%) translateY(0)}
+footer{color:var(--mute);font-size:13px;border:0}
+.scrim{display:none}
+@media(max-width:1100px){.tiles,.pal,.chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){
+ .side{transform:translateX(-100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 48px rgba(0,0,0,.4)}
+ body.nav-open .side{transform:none}
+ body.nav-open .scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}
+ .main{margin-left:0}.menu{display:inline-grid;place-items:center}
+ .two,.elev{grid-template-columns:1fr}}
+@media(max-width:600px){.frow{grid-template-columns:1fr;gap:8px}.panel{padding:4px 16px}.ladder .lr{grid-template-columns:1fr}.ladder .lr span:last-child{text-align:left}
+ .crumb{display:none}table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7em}.stack td::before{content:attr(data-l);float:inline-start;width:6.5em;margin-inline-start:-7em;color:var(--mute)}}
+</style>
+</head>
+<body>
+<aside class="side" id="side" aria-label="Índice">
+ <div class="brand">
+  <div class="mk"><img src="assets/03_Isotipo/SVG/ATH_Isotipo_White.svg" alt=""></div>
+  <div><b>After the Hype</b><small>Brand Kit · v1.0</small></div>
+ </div>
+ <nav class="nav" id="nav">
+  <div class="pill" id="pill"></div>
+  <h6>Inicio</h6>
+  <a href="#inicio"><i></i>Resumen</a>
+  <h6>Logo</h6>
+  <a href="#horizontal"><i></i>Horizontal</a>
+  <a href="#vertical"><i></i>Vertical</a>
+  <a href="#isotipo"><i></i>Isotipo</a>
+  <a href="#iconos"><i></i>Favicon y app icon</a>
+  <h6>Color</h6>
+  <a href="#color"><i></i>Paleta primaria</a>
+  <a href="#midnight"><i></i>Midnight Navy</a>
+  <a href="#zinc"><i></i>Zinc</a>
+  <a href="#semantic"><i></i>Tokens semánticos</a>
+  <h6>Tipografía</h6>
+  <a href="#tipografia"><i></i>SF Pro y escala UI</a>
+  <h6>Layout</h6>
+  <a href="#spacing"><i></i>Espaciado y grid</a>
+  <a href="#radius"><i></i>Radios y elevación</a>
+  <h6>Entrega</h6>
+  <a href="#tokens"><i></i>Tokens para IA</a>
+  <a href="#uso"><i></i>Uso correcto</a>
+ </nav>
+ <div class="side-foot">
+  <div class="fig">
+   <div class="fig-h"><span class="fig-i"><img src="figma/figma.svg" alt=""></span><div><b>Figma</b><small>Presentación y archivo</small></div></div>
+   <div class="pw"><span>Contraseña</span><code>ATH.2026</code><button class="cp" data-copy="ATH.2026" aria-label="Copiar contraseña"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button></div>
+   <div class="fig-b"><a class="btn sm" href="https://www.figma.com/design/ZnUQJS15lSAZGtDVNkWWzd/Brand-Guidelines-AfterTheHype?node-id=175-4408&amp;t=JAXqKjfrsKxNGAOW-1" target="_blank" rel="noopener" aria-label="Abrir presentación en Figma">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a><button class="btn sm" id="dlfig" title="Brand_Guidelines_AfterTheHype.fig · 150 MB">Descargar .fig</button></div>
+  </div>
+  <button class="btn" data-zip="all">Descargar kit (.zip)</button>
+  <small>Identidad by Alvaro Cáceres · 2026</small>
+ </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="main">
+<header class="top">
+ <div class="row" style="flex-wrap:nowrap;gap:8px">
+  <button class="menu" id="menu" aria-label="Abrir índice" aria-controls="side"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <div class="crumb" id="crumb">Brand Kit · <b>Resumen</b></div>
+ </div>
+ <div class="mode" role="group" aria-label="Theme">
+  <button type="button" data-mode-set="dark" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Dark</button>
+  <button type="button" data-mode-set="light" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Light</button>
+ </div>
+</header>
+
+<section class="band hero" id="inicio" data-t="Resumen"><div class="wrap">
+ <img class="lockup for-dark" src="assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_White.svg" alt="After the Hype">
+ <img class="lockup for-light" src="assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_Navy.svg" alt="After the Hype">
+ <h1>Brand Kit</h1>
+ <p>Todo lo necesario para usar la identidad de After the Hype, Lima y Azul: logos en todos sus formatos, color, tipografía, espaciado, radios y los tokens listos para pasar a una IA o a código.</p>
+ <div class="row"><button class="btn" data-zip="all">Descargar kit completo (.zip)</button><a class="btn ghost" href="#tokens">Ver tokens para IA</a></div>
+ <div class="chips" id="chips"></div>
+</div></section>
+
+<div id="sections"></div>
+
+<section class="band" id="iconos" data-t="Favicon y app icon"><div class="wrap">
+ <p class="eyebrow">Logo</p><h2>Favicon y app icon</h2>
+ <p class="lead">Isotipo en Cloud White sobre Midnight Navy, listo para web, iOS, Android y avatares de redes. El .ico (16, 32 y 48 px) va dentro del ZIP.</p>
+ <div class="icons">
+  <div class="icon"><img src="assets/04_Favicon-AppIcon/ATH_AppIcon_Navy_512px.png" alt="App icon Navy">App icon Navy</div>
+  <div class="icon"><img src="assets/04_Favicon-AppIcon/ATH_AppIcon_Lime_1024px.png" alt="App icon Lime">App icon Lime</div>
+  <div class="icon"><img class="fav" src="assets/04_Favicon-AppIcon/favicon.svg" alt="Favicon">Favicon</div>
+ </div>
+ <div class="panel" id="iconfiles"></div>
+ <div class="sec-foot"><button class="btn ghost" data-zip="icon">Descargar favicon y app icons (.zip)</button></div>
+</div></section>
+
+<section class="band" id="color" data-t="Paleta primaria"><div class="wrap">
+ <p class="eyebrow">Color</p><h2>Paleta primaria</h2>
+ <p class="lead">Los cuatro colores de marca. Midnight Navy es el color principal y Electric Lime el acento. En botones y controles, el color de acción cambia según el tema: Lima en Dark y Midnight Navy en Light. Toca un valor para copiarlo.</p>
+ <div class="pal" id="pal"></div>
+</div></section>
+
+<section class="band" id="midnight" data-t="Midnight Navy"><div class="wrap">
+ <p class="eyebrow">Color</p><h2>Midnight Navy</h2>
+ <p class="lead">Escala base de la interfaz: fondos, texto, bordes y divisores. 950 es el fondo de página en modo oscuro y 100 en modo claro. 900 es el Midnight Navy de marca (Primary 03).</p>
+ <div class="scale" id="neutral"></div>
+</div></section>
+
+<section class="band" id="zinc" data-t="Zinc"><div class="wrap">
+ <p class="eyebrow">Color</p><h2>Zinc</h2>
+ <p class="lead">Gris más frío y neutro para superficies secundarias, divisores y estados deshabilitados cuando Midnight Navy resulta pesado.</p>
+ <div class="scale" id="zincs"></div>
+</div></section>
+
+<section class="band" id="semantic" data-t="Tokens semánticos"><div class="wrap">
+ <p class="eyebrow">Color</p><h2>Tokens semánticos <span class="tag-p">Propuesta</span></h2>
+ <p class="lead">Cómo se usan las escalas en una interfaz, en light y dark. En diseño y código hay que usar estos nombres, no los HEX: así un mismo componente funciona en los dos temas.</p>
+ <div class="panel" style="padding:4px 24px"><table class="stack"><thead><tr><th>Token</th><th>Light</th><th>Dark</th><th>Uso</th></tr></thead><tbody id="semrows"></tbody></table></div>
+ <p class="note">Regla de acción: en Dark los botones y controles usan Electric Lime con texto Midnight Navy; en Light usan Midnight Navy con texto Cloud White. Electric Lime nunca lleva texto blanco ni se usa como color de texto sobre fondos claros. En Light queda solo para chips, badges y destacados.</p>
+</div></section>
+
+<section class="band" id="tipografia" data-t="Tipografía"><div class="wrap">
+ <p class="eyebrow">Tipografía</p><h2>SF Pro y escala UI</h2>
+ <p class="lead">SF Pro es la única familia de la marca. Para interfaces, la escala de abajo usa tamaños de 12 a 56 px e interlineados en múltiplos de 4.</p>
+ <div class="spec">
+  <p class="specimen">Aa Hype</p>
+  <div class="weights"><span style="font-weight:400">Regular 400</span><span style="font-weight:500">Medium 500</span><span style="font-weight:600">Semibold 600</span><span style="font-weight:700">Bold 700</span></div>
+  <p class="note">Font stack: <code>"SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif</code>. La licencia de SF Pro solo permite usarla en plataformas Apple, así que en web y Android la alternativa es Inter, con métricas muy parecidas.</p>
+ </div>
+ <h3 class="sh">Escala UI <span class="tag-p">Propuesta</span></h3>
+ <div class="spec ladder" id="ladder"></div>
+</div></section>
+
+<section class="band" id="spacing" data-t="Espaciado y grid"><div class="wrap">
+ <p class="eyebrow">Layout</p><h2>Espaciado y grid <span class="tag-p">Propuesta</span></h2>
+ <p class="lead">Todo el espaciado sale de una base de 8 px. Se admite 4 px solo para ajustes finos, como el espacio entre icono y texto.</p>
+ <div class="spec ruler" id="ruler"></div>
+ <h3 class="sh">Grid y breakpoints</h3>
+ <div class="panel" style="padding:4px 24px"><table class="stack"><thead><tr><th>Breakpoint</th><th>Ancho</th><th>Columnas</th><th>Gutter</th><th>Margen</th></tr></thead><tbody id="gridrows"></tbody></table></div>
+ <p class="note">Contenedor máximo de 1280 px. Los gutters y márgenes también son múltiplos de 8.</p>
+</div></section>
+
+<section class="band" id="radius" data-t="Radios y elevación"><div class="wrap">
+ <p class="eyebrow">Layout</p><h2>Radios y elevación <span class="tag-p">Propuesta</span></h2>
+ <p class="lead">Los radios también son múltiplos de 8. Las cards de 16 px coinciden con el redondeo de las tarjetas del manual.</p>
+ <div class="radii" id="radii"></div>
+ <h3 class="sh">Elevación</h3>
+ <p class="lead">Sombras suaves teñidas de Midnight Navy, solo para light mode. En dark mode la profundidad se resuelve con el siguiente tono de superficie y un borde de 1 px.</p>
+ <div class="elev" id="elev"></div>
+</div></section>
+
+<section class="band" id="tokens" data-t="Tokens para IA"><div class="wrap">
+ <p class="eyebrow">Entrega</p><h2>Tokens para IA</h2>
+ <p class="lead">Todos los criterios de esta página en formato máquina. Pega el JSON en una IA (Claude, v0, Cursor…) junto a tu pedido, o usa las variables CSS directamente en código.</p>
+ <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="json">JSON</button><button role="tab" aria-selected="false" data-tab="css">CSS variables</button></div>
+ <div class="code"><div class="row"><button class="btn sm" id="copycode">Copiar</button><button class="btn sm" id="dljson">Descargar .json</button></div><pre id="codeout"></pre></div>
+</div></section>
+
+<section class="band" id="uso" data-t="Uso correcto"><div class="wrap">
+ <p class="eyebrow">Entrega</p><h2>Uso correcto</h2>
+ <p class="lead">Lo esencial del manual para quien recibe el kit: qué hacer y qué evitar con el logo y el color.</p>
+ <h3 class="sh dd-h"><span class="bd ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Sí</h3>
+ <div class="dd" id="dos"></div>
+ <h3 class="sh dd-h"><span class="bd no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No</h3>
+ <div class="dd" id="donts"></div>
+</div></section>
+
+<footer class="band"><div class="wrap">© 2026 After the Hype. Brand Kit generado desde el Brand Guidelines de Figma.</div></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+{
+/* Si el .fig se aloja fuera (Drive, Dropbox…), pon aquí su link directo */
+const FIG_URL='';
+const FIGMA='https://www.figma.com/design/ZnUQJS15lSAZGtDVNkWWzd/Brand-Guidelines-AfterTheHype?node-id=175-4408&t=JAXqKjfrsKxNGAOW-1';
+const LOCK=[
+ {id:'horizontal',title:'Logo horizontal',base:'Logo-Horizontal',dir:'01_Logo-Horizontal',lead:'Lockup principal: isotipo AH + wordmark. Es la firma por defecto de la marca.'},
+ {id:'vertical',title:'Logo vertical',base:'Logo-Vertical',dir:'02_Logo-Vertical',lead:'Isotipo sobre el wordmark, para formatos cuadrados o verticales y espacios estrechos.'},
+ {id:'isotipo',title:'Isotipo',base:'Isotipo',dir:'03_Isotipo',lead:'El símbolo AH en solitario, para avatares, sellos, merch y tamaños reducidos.'}];
+const COLS=[['Navy','#111827','Sobre Cloud White, Lima o Sky'],['Black','#000000','Sobre Cloud White'],['White','#F7FAFC','Sobre Midnight Navy']];
+const COMBOS=[['Black-on-CloudWhite','#F7FAFC','Black','Cloud White','#111827'],['Navy-on-ElectricLime','#DBFF00','Navy','Electric Lime','#111827'],['White-on-MidnightNavy','#111827','White','Midnight Navy','#F7FAFC'],['Navy-on-SkyBlue','#59C1F2','Navy','Sky Blue','#111827']];
+const PAL=[['Cloud White','cloud-white','#F7FAFC','247 · 250 · 252','2 · 1 · 0 · 1'],['Electric Lime','electric-lime','#DBFF00','219 · 255 · 0','14 · 0 · 100 · 0'],['Midnight Navy','midnight-navy','#111827','17 · 24 · 39','56 · 38 · 0 · 85'],['Sky Blue','sky','#59C1F2','89 · 193 · 242','63 · 20 · 0 · 5']];
+const MN=[['100','#FFFFFF'],['200','#F9FAFB'],['250','#F3F4F6'],['300','#E5E7EB'],['400','#9CA3AF'],['500','#6B7280'],['600','#4B5563'],['700','#374151'],['800','#1F2937'],['900','#111827','Primary 03'],['950','#0C111B']];
+const ZN=[['100','#F4F4F8'],['200','#E4E4E7'],['300','#D4D4D8'],['400','#A1A1AA'],['500','#71717A'],['600','#52525B'],['700','#3F3F46'],['800','#27272A'],['900','#18181B']];
+const SEM=[
+ ['bg/page','midnight-navy/100','midnight-navy/950','Fondo de página'],
+ ['bg/subtle','midnight-navy/200','midnight-navy/900','Secciones alternas, sidebars'],
+ ['bg/surface','midnight-navy/100','midnight-navy/900','Cards, modales, popovers (con borde)'],
+ ['bg/muted','midnight-navy/250','midnight-navy/800','Inputs, hover de filas, chips'],
+ ['bg/disabled','zinc/200','zinc/800','Controles deshabilitados'],
+ ['border/default','midnight-navy/300','midnight-navy/800','Bordes y divisores'],
+ ['border/strong','midnight-navy/400','midnight-navy/700','Bordes de inputs, separadores marcados'],
+ ['text/primary','midnight-navy/900','cloud-white','Títulos y texto principal'],
+ ['text/secondary','midnight-navy/600','midnight-navy/400','Texto de apoyo'],
+ ['text/muted','midnight-navy/500','midnight-navy/500','Placeholders, metadatos'],
+ ['text/disabled','zinc/400','zinc/600','Texto deshabilitado'],
+ ['action/bg','midnight-navy/900','electric-lime','Botón principal, controles activos, barras y progreso'],
+ ['action/fg','cloud-white','midnight-navy/900','Texto e iconos sobre action/bg'],
+ ['highlight/bg','electric-lime','electric-lime','Chips, badges, etiquetas y destacados (nunca botones en Light)'],
+ ['highlight/fg','midnight-navy/900','midnight-navy/900','Texto sobre highlight/bg'],
+ ['link','deep-sky','sky','Enlaces e información'],
+ ['focus/ring','sky','sky','Anillo de foco (2 px, offset 2 px)']];
+const HEX=Object.fromEntries([...MN.map(([s,h])=>['midnight-navy/'+s,h]),...ZN.map(([s,h])=>['zinc/'+s,h]),['cloud-white','#F7FAFC'],['electric-lime','#DBFF00'],['sky','#59C1F2'],['deep-sky','#1E6E96']]);
+const TYPE=[['display',56,64,600,'-0.02em','Hero y portadas'],['h1',40,48,600,'-0.02em','Título de página'],['h2',32,40,600,'-0.01em','Título de sección'],['h3',24,32,600,'-0.01em','Título de card o bloque'],['h4',20,28,600,'0','Subtítulo'],['body-lg',18,28,400,'0','Intro, texto destacado'],['body',16,24,400,'0','Texto base'],['body-sm',14,20,400,'0','Texto secundario, tablas'],['label',14,16,500,'0','Botones, labels de formulario'],['caption',12,16,500,'0.01em','Metadatos, ayudas']];
+const SPACE=[[0,'0','Sin espacio'],[4,'0.5','Solo ajustes finos (icono-texto)'],[8,'1','Separación mínima'],[16,'2','Padding de controles, gap de listas'],[24,'3','Padding de cards'],[32,'4','Separación entre bloques'],[40,'5','Separación entre grupos'],[48,'6','Padding de secciones (móvil)'],[64,'8','Padding de secciones (desktop)'],[80,'10','Separación entre secciones'],[96,'12','Hero y portadas'],[128,'16','Grandes respiros']];
+const GRID=[['sm','≥ 640 px','4','16 px','16 px'],['md','≥ 768 px','8','24 px','32 px'],['lg','≥ 1024 px','12','24 px','48 px'],['xl','≥ 1280 px','12','32 px','64 px']];
+const RAD=[['none',0,'Tablas, imágenes a sangre'],['sm',8,'Botones, inputs, chips'],['md',16,'Cards, menús, popovers'],['lg',24,'Modales, paneles'],['xl',32,'Bloques hero, secciones destacadas'],['full',9999,'Pills, avatares, toggles']];
+const ELEV=[['e1','0 1px 2px rgba(17,24,39,.06), 0 1px 1px rgba(17,24,39,.04)','Cards en reposo'],['e2','0 4px 16px rgba(17,24,39,.08)','Hover, menús, popovers'],['e3','0 16px 48px rgba(17,24,39,.14)','Modales, diálogos']];
+
+const lum=x=>{const n=parseInt(x.slice(1),16);return(0.299*(n>>16)+0.587*(n>>8&255)+0.114*(n&255))/255};
+const scale=(name,arr)=>arr.map(([s,hx,tag])=>`<button class="st" data-copy="${hx}" style="background:${hx};color:${lum(hx)>.55?'#111827':'#F7FAFC'}" aria-label="Copiar ${name} ${s} ${hx}">${tag?`<span class="tag">${tag}</span>`:''}<b>${name} ${s}</b><code>${hx}</code></button>`).join('');
+const sv=t=>`<span class="sv"><span style="background:${HEX[t]}"></span><code>${t}</code></span>`;
+const L='assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_';
+const DOS=[
+ [`<div class="stage" style="background:#111827"><img src="${L}White.svg" alt=""></div>`,'Logo White sobre Midnight Navy','La versión principal en fondos oscuros.'],
+ [`<div class="stage" style="background:#DBFF00"><img src="${L}Navy.svg" alt=""></div>`,'Logo Navy sobre Electric Lime','Para piezas de impacto y destacados.'],
+ [`<div class="stage" style="background:#F7FAFC"><div class="cs"><i>área de respeto</i><img src="${L}Black.svg" alt=""></div></div>`,'Respetar el área de respeto','Mínimo la altura del isotipo alrededor del logo.'],
+ [`<div class="stage" style="background:#59C1F2"><img src="${L}Navy.svg" alt=""></div>`,'Logo Navy sobre Sky','Las cuatro combinaciones aprobadas, siempre con contraste alto.'],
+ [`<div class="stage"><div class="split"><div style="background:#0C111B"><span class="mini" style="background:#DBFF00;color:#111827">Empezar</span></div><div style="background:#FFFFFF"><span class="mini" style="background:#111827;color:#F7FAFC">Empezar</span></div></div></div>`,'Botones según el tema','Dark: Lima con texto Navy. Light: Navy con texto Cloud White.'],
+ [`<div class="stage" style="background:#FFFFFF"><span class="mini" style="background:#DBFF00;color:#111827;height:28px;border-radius:999px;font-size:12px">Nuevo</span></div>`,'Lima como acento en Light','Chips, badges y destacados, con texto Midnight Navy.']];
+const DONTS=[
+ [`<div class="stage" style="background:#F7FAFC"><img src="${L}Navy.svg" alt="" style="transform:scaleX(1.35) scaleY(.75)"></div>`,'No deformar','Nunca estirar ni cambiar las proporciones.'],
+ [`<div class="stage" style="background:#F7FAFC"><img src="${L}Navy.svg" alt="" style="filter:invert(.45) sepia(1) saturate(6) hue-rotate(290deg)"></div>`,'No recolorear','Solo Navy, Black o White. Nunca Lima ni colores externos.'],
+ [`<div class="stage" style="background:#DBFF00"><img src="${L}Navy.svg" alt="" style="filter:drop-shadow(6px 8px 6px rgba(0,0,0,.45))"></div>`,'No aplicar efectos','Sin sombras, degradados, contornos ni brillos.'],
+ [`<div class="stage" style="background:#1F2937"><img src="${L}Navy.svg" alt=""></div>`,'No usar con bajo contraste','Navy sobre fondos oscuros pierde lectura.'],
+ [`<div class="stage" style="background:#F7FAFC"><img src="${L}Navy.svg" alt="" style="transform:rotate(-14deg)"></div>`,'No rotar','El logo siempre va horizontal.'],
+ [`<div class="stage"><div class="split"><div style="background:#FFFFFF"><span class="mini" style="background:#DBFF00;color:#FFFFFF">Empezar</span></div><div style="background:#FFFFFF"><span class="lt" style="color:#DBFF00">Hype</span></div></div></div>`,'No Lima con texto blanco ni como texto','No cumple contraste. En Light, los botones van en Navy.']];
+const ICO_OK=`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`,ICO_NO=`<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
+const exs=(arr,ok)=>arr.map(([st,t,d])=>`<figure class="ex ${ok?'ok':'no'}" style="margin:0">${st}<figcaption class="cap"><span class="bd ${ok?'ok':'no'}">${ok?ICO_OK:ICO_NO}</span><div><b>${t}</b><span>${d}</span></div></figcaption></figure>`).join('');
+let manifest=[];
+const size=b=>b>1048576?(b/1048576).toFixed(1)+' MB':Math.max(1,Math.round(b/1024))+' KB';
+const btn=(path,label)=>{const m=manifest.find(x=>x.path===path);return `<button class="btn sm" data-file="${path}" title="${path.split('/').pop()}${m?' · '+size(m.bytes):''}">${label}</button>`};
+
+function tokens(){
+ const color={brand:Object.fromEntries(PAL.map(([n,k,h])=>[k,h])),'midnight-navy':Object.fromEntries(MN.map(([s,h])=>[s,h])),zinc:Object.fromEntries(ZN.map(([s,h])=>[s,h])),'deep-sky':'#1E6E96'};
+ const semantic={light:{},dark:{}};SEM.forEach(([k,l,d])=>{semantic.light[k]=`{${l}} ${HEX[l]}`;semantic.dark[k]=`{${d}} ${HEX[d]}`});
+ return {brand:'After the Hype',identity:'Lima y Azul',version:'1.0',
+  principles:['Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos).','Midnight Navy es el color principal; Electric Lime es el acento.','Botones y controles (action): en Dark usan Electric Lime con texto midnight-navy/900; en Light usan midnight-navy/900 con texto cloud-white. Electric Lime con texto blanco no cumple contraste.','Electric Lime en Light solo para chips, badges y destacados (highlight), siempre con texto midnight-navy/900.','Usar tokens semánticos, no HEX, para que los componentes funcionen en light y dark.','Dark mode: fondo midnight-navy/950; light mode: fondo midnight-navy/100.'],
+  color,semantic,
+  typography:{family:'SF Pro',stack:'"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif',webFallback:'Inter',weights:{regular:400,medium:500,semibold:600,bold:700},scale:Object.fromEntries(TYPE.map(([k,s,l,w,ls,u])=>[k,{size:s,lineHeight:l,weight:w,letterSpacing:ls,use:u}]))},
+  spacing:Object.fromEntries(SPACE.map(([px,k])=>[k,px])),
+  radius:Object.fromEntries(RAD.map(([k,px])=>[k,px])),
+  elevation:Object.fromEntries(ELEV.map(([k,v])=>[k,v])),
+  layout:{container:1280,breakpoints:Object.fromEntries(GRID.map(([k,w,c,g,m])=>[k,{minWidth:parseInt(w.replace(/\D/g,'')),columns:+c,gutter:parseInt(g),margin:parseInt(m)}]))},
+  logo:{primary:'Logo horizontal',clearspace:'Altura del isotipo alrededor del logo',approvedColors:{navy:'#111827',black:'#000000',white:'#F7FAFC'}}};
+}
+function cssVars(){
+ const L=[':root {','  /* Brand */',...PAL.map(([n,k,h])=>`  --color-${k}: ${h};`),'  /* Midnight Navy */',...MN.map(([s,h])=>`  --midnight-navy-${s}: ${h};`),'  /* Zinc */',...ZN.map(([s,h])=>`  --zinc-${s}: ${h};`),'  --color-deep-sky: #1E6E96;','',
+  '  /* Semantic · light */',...SEM.map(([k,l])=>`  --${k.replace('/','-')}: ${HEX[l]};`),'',
+  '  /* Typography */','  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;',...TYPE.map(([k,s,l,w])=>`  --text-${k}: ${w} ${s}px/${l}px var(--font-sans);`),'',
+  '  /* Spacing (8 px) */',...SPACE.map(([px,k])=>`  --space-${k.replace('.','_')}: ${px}px;`),'',
+  '  /* Radius */',...RAD.map(([k,px])=>`  --radius-${k}: ${px}px;`),'',
+  '  /* Elevation */',...ELEV.map(([k,v])=>`  --shadow-${k}: ${v};`),'}','',
+  '[data-theme="dark"] {',...SEM.map(([k,,d])=>`  --${k.replace('/','-')}: ${HEX[d]};`),'}'];
+ return L.join('\n');
+}
+
+let tab='json';
+function showCode(){document.getElementById('codeout').textContent=tab==='json'?JSON.stringify(tokens(),null,2):cssVars();
+ document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)))}
+
+function render(){
+ document.getElementById('sections').innerHTML=LOCK.map(L=>{
+  const a=`assets/${L.dir}`;
+  const tiles=COMBOS.map(([n,bg,fg,bgName,tx])=>`<div class="tile" style="background:${bg};color:${tx}"><img src="${a}/SVG/ATH_${L.base}_${fg}.svg" alt="${L.title} ${fg} sobre ${bgName}" loading="lazy"><span>${fg} / ${bgName}</span></div>`).join('');
+  const px=L.id==='isotipo'?[512,1024,2048]:[1000,2000,4000];
+  const rows=COLS.map(([c,hex,note])=>`<div class="frow"><div class="fname"><span class="dot" style="background:${hex}"></span><div>${c}<small>Transparente · ${note}</small></div></div>
+   <div class="row">${btn(`${a}/SVG/ATH_${L.base}_${c}.svg`,'SVG')}${btn(`${a}/PDF/ATH_${L.base}_${c}.pdf`,'PDF')}${px.map(p=>btn(`${a}/PNG/ATH_${L.base}_${c}_${p}px.png`,`PNG ${p}`)).join('')}</div></div>`).join('');
+  const combos=COMBOS.map(([n,bg,fg,bgName])=>`<div class="frow"><div class="fname"><span class="dot" style="background:${bg}"></span><div>${fg} / ${bgName}<small>Con fondo y área de respeto</small></div></div>
+   <div class="row">${btn(`${a}/JPG/ATH_${L.base}_${n}.jpg`,'JPG')}${btn(`${a}/PNG-Background/ATH_${L.base}_${n}.png`,'PNG')}</div></div>`).join('');
+  return `<section class="band" id="${L.id}" data-t="${L.title}"><div class="wrap"><p class="eyebrow">Logo</p><h2>${L.title}</h2><p class="lead">${L.lead}</p>
+   <div class="tiles">${tiles}</div><div class="panel">${rows}${combos}</div>
+   <div class="sec-foot"><button class="btn ghost" data-zip="${L.id}">Descargar ${L.title.toLowerCase()} completo (.zip)</button></div></div></section>`}).join('');
+ const d='assets/04_Favicon-AppIcon';
+ document.getElementById('iconfiles').innerHTML=[
+  ['App icon Navy','#111827',[[`${d}/ATH_AppIcon_Navy.svg`,'SVG'],[`${d}/ATH_AppIcon_Navy_1024px.png`,'PNG 1024'],[`${d}/ATH_AppIcon_Navy_512px.png`,'PNG 512'],[`${d}/apple-touch-icon.png`,'Apple touch 180']]],
+  ['App icon Lime','#DBFF00',[[`${d}/ATH_AppIcon_Lime.svg`,'SVG'],[`${d}/ATH_AppIcon_Lime_1024px.png`,'PNG 1024']]],
+  ['Favicon','#111827',[[`${d}/favicon.svg`,'SVG'],[`${d}/favicon-32.png`,'PNG 32'],[`${d}/favicon-16.png`,'PNG 16']]]
+ ].map(([n,c,f])=>`<div class="frow"><div class="fname"><span class="dot" style="background:${c}"></span><div>${n}</div></div><div class="row">${f.map(([p,l])=>btn(p,l)).join('')}</div></div>`).join('');
+ document.getElementById('pal').innerHTML=PAL.map(([n,k,h,rgb,cmyk])=>`<div class="sw"><div class="c" style="background:${h}"></div><div class="t"><b>${n}</b>
+  <button class="btn sm" data-copy="${h}" style="justify-self:start">${h}</button><code>RGB ${rgb}</code><code>CMYK ${cmyk}</code></div></div>`).join('');
+ document.getElementById('neutral').innerHTML=scale('Midnight Navy',MN);
+ document.getElementById('zincs').innerHTML=scale('Zinc',ZN);
+ document.getElementById('semrows').innerHTML=SEM.map(([k,l,dk,u])=>`<tr><td><code>${k}</code></td><td>${sv(l)}</td><td>${sv(dk)}</td><td>${u}</td></tr>`).join('');
+ document.getElementById('ladder').innerHTML=TYPE.map(([k,s,l,w,ls,u])=>`<div class="lr"><span>${k}</span><span class="smp" style="font-size:${s}px;line-height:${l}px;font-weight:${w};letter-spacing:${ls}">${s>=24?'Delivery beats hype':'Ship what works, not what trends.'}</span><span>${s}/${l} · ${w}</span></div>`).join('');
+ document.getElementById('ruler').innerHTML=SPACE.map(([px,k,u])=>`<div class="rr"><code>space-${k}</code><span>${px} px</span><div style="display:flex;align-items:center;gap:12px"><div class="bar" style="width:${px}px;max-width:60%"></div><span>${u}</span></div></div>`).join('');
+ document.getElementById('gridrows').innerHTML=GRID.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('');
+ document.getElementById('radii').innerHTML=RAD.map(([k,px,u])=>`<div class="rad"><div style="border-radius:${Math.min(px,44)}px"></div><b>radius-${k} · ${px===9999?'full':px+' px'}</b><span>${u}</span></div>`).join('');
+ document.getElementById('elev').innerHTML=ELEV.map(([k,v,u])=>`<div style="box-shadow:${v}"><b>shadow-${k}</b><span>${u}</span></div>`).join('');
+ const files=manifest.length;
+ document.getElementById('chips').innerHTML=[[files||78,'archivos de logo'],[MN.length+ZN.length+4,'colores'],[TYPE.length,'estilos de texto'],[SEM.length,'tokens semánticos']].map(([n,l])=>`<div class="chip"><b>${n}</b><span>${l}</span></div>`).join('');
+ document.getElementById('dos').innerHTML=exs(DOS,true);
+ document.getElementById('donts').innerHTML=exs(DONTS,false);
+ showCode();setupNav();
+}
+
+const toast=document.getElementById('toast');let tt;
+function say(t){toast.textContent=t;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),2600)}
+let dl=null;
+const dlReady=(window.claude&&claude.use?claude.use('downloads'):Promise.resolve(null)).then(x=>dl=x).catch(()=>null);
+const waitDl=async()=>{if(!dl&&window.claude)await Promise.race([dlReady,new Promise(r=>setTimeout(r,1500))]);return dl};
+async function saveFile(name,data){const d=await waitDl();if(d)return d.save({filename:name,data});
+ const blob=data instanceof Blob?data:new Blob([data]);const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),8000);return {status:'saved'}}
+
+function setMode(m){document.documentElement.dataset.mode=m;document.querySelectorAll('[data-mode-set]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.modeSet===m)));try{localStorage.setItem('ath-mode',m)}catch{}}
+{let m='dark';try{m=localStorage.getItem('ath-mode')||'dark'}catch{}setMode(m)}
+
+/* sidebar: scrollspy + sliding pill + spotlight */
+const nav=document.getElementById('nav'),pill=document.getElementById('pill'),crumb=document.getElementById('crumb');
+let links=[],spy;
+function movePill(a){if(!a)return;pill.style.opacity=1;pill.style.transform=`translateY(${a.offsetTop}px)`;}
+function setActive(id){links.forEach(a=>a.classList.toggle('on',a.hash==='#'+id));const a=links.find(x=>x.hash==='#'+id);movePill(a);
+ const s=document.getElementById(id);if(s)crumb.innerHTML=`Brand Kit · <b>${s.dataset.t||''}</b>`;
+ if(a){const r=a.getBoundingClientRect(),n=nav.getBoundingClientRect();if(r.top<n.top+8)nav.scrollTop-=n.top+8-r.top;else if(r.bottom>n.bottom-8)nav.scrollTop+=r.bottom-n.bottom+8}}
+let secs=[],tick=false;
+function spyNow(){tick=false;let cur=secs[0];for(const s of secs){if(s.getBoundingClientRect().top<=140)cur=s;else break}
+ if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1];if(cur&&!cur.isSameNode(spy))setActive(cur.id),spy=cur}
+function setupNav(){
+ links=[...nav.querySelectorAll('a')];
+ secs=links.map(a=>document.querySelector(a.hash)).filter(Boolean);spy=null;
+ spyNow();
+}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(spyNow)}},{passive:true});
+addEventListener('resize',()=>{const a=nav.querySelector('a.on');movePill(a)});
+const side=document.getElementById('side');
+side.addEventListener('pointermove',e=>{const r=side.getBoundingClientRect();side.style.setProperty('--mx',(e.clientX-r.left)+'px');side.style.setProperty('--my',(e.clientY-r.top)+'px')});
+side.addEventListener('pointerleave',()=>{side.style.setProperty('--mx','-300px');side.style.setProperty('--my','-300px')});
+const menu=document.getElementById('menu'),closeNav=()=>{document.body.classList.remove('nav-open');menu.setAttribute('aria-expanded','false')};
+menu.addEventListener('click',()=>{const o=document.body.classList.toggle('nav-open');menu.setAttribute('aria-expanded',String(o))});
+document.getElementById('scrim').addEventListener('click',closeNav);
+nav.addEventListener('click',e=>{if(e.target.closest('a'))closeNav()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav()});
+
+document.addEventListener('click',async e=>{
+ const mb=e.target.closest('[data-mode-set]');if(mb){setMode(mb.dataset.modeSet);return}
+ const tb=e.target.closest('[data-tab]');if(tb){tab=tb.dataset.tab;showCode();return}
+ if(e.target.closest('#copycode')){try{await navigator.clipboard.writeText(document.getElementById('codeout').textContent);say(tab==='json'?'JSON copiado':'CSS copiado')}catch{say('No se pudo copiar')}return}
+ const fb=e.target.closest('#dlfig');
+ if(fb){if(fb.disabled)return;
+  const t=fb.textContent;fb.disabled=true;const parts=[];
+  if(FIG_URL){fb.disabled=false;window.open(FIG_URL,'_blank','noopener');return}
+  try{for(let i=0;i<8;i++){fb.textContent=`Preparando ${Math.round(i/8*100)}%`;const r=await fetch(`figma/ATH_fig.part0${i}.txt`);if(!r.ok){if(i===0){fb.textContent=t;fb.disabled=false;window.open(FIGMA,'_blank','noopener');say('Descárgalo desde Figma: Archivo › Guardar copia local');return}throw 0}parts.push(await r.blob())}
+   fb.textContent=t;fb.disabled=false;
+   await saveFile('Brand_Guidelines_AfterTheHype.fig',new Blob(parts));say('Archivo .fig descargado')}
+  catch(err){fb.textContent=t;fb.disabled=false;if(err&&err.code==='declined')return;say('No se pudo descargar el .fig')}
+  return}
+ if(e.target.closest('#dljson')){
+  try{await saveFile('AfterTheHype_tokens.json',JSON.stringify(tokens(),null,2));say('Tokens descargados')}catch(err){if(err&&err.code==='declined')return;say('No se pudo descargar')}return}
+ const c=e.target.closest('[data-copy]');
+ if(c){try{await navigator.clipboard.writeText(c.dataset.copy);say((c.dataset.copy==='ATH.2026'?'Contraseña':c.dataset.copy)+' copiado'.replace('copiado',c.dataset.copy==='ATH.2026'?'copiada':'copiado'))}catch{say('No se pudo copiar')}return}
+ const z=e.target.closest('[data-zip]');
+ if(z){const k=z.dataset.zip;const sel=manifest.filter(m=>k==='all'||m.group===k);
+  const zname=k==='all'?'AfterTheHype_AssetKit.zip':`ATH_${{horizontal:'Logo-Horizontal',vertical:'Logo-Vertical',isotipo:'Isotipo',icon:'Favicon-AppIcon'}[k]}.zip`;
+  if(!window.JSZip){try{const r=await fetch('zips/'+zname);if(!r.ok)throw 0;await saveFile(zname,await r.blob());say(zname+' descargado')}catch(err){if(err&&err.code==='declined')return;say('No se pudo descargar '+zname)}return}
+  
+  z.disabled=true;const t=z.textContent;z.textContent='Preparando ZIP…';
+  try{const zip=new JSZip();
+   await Promise.all([...sel.map(m=>m.path),'assets/LEEME.txt'].map(async p=>{const r=await fetch(p);if(r.ok)zip.file(p.replace(/^assets\//,''),await r.blob())}));
+   if(k==='all')zip.file('AfterTheHype_tokens.json',JSON.stringify(tokens(),null,2));
+   const blob=await zip.generateAsync({type:'blob'});z.textContent=t;z.disabled=false;
+   await saveFile(zname,blob);say(zname+' descargado')}
+  catch(err){z.textContent=t;z.disabled=false;if(err&&err.code==='declined')return;say('No se pudo descargar '+zname)}
+  return}
+ const b=e.target.closest('[data-file]');if(!b)return;
+ const path=b.dataset.file,name=path.split('/').pop();
+ try{const r=await fetch(path);if(!r.ok)throw 0;const blob=await r.blob();await saveFile(name,blob);say(name+' descargado')}
+ catch(err){if(err&&err.code==='declined')return;if(err&&err.code==='rate_limited'){say('Espera un momento e inténtalo de nuevo');return}say('No se pudo descargar '+name)}
+});
+
+fetch('manifest.json').then(r=>r.json()).then(m=>{manifest=m;render()}).catch(()=>render());
+}
+</script>
+</body>
+</html>
