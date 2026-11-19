@@ -56,7 +56,7 @@ a{color:inherit}
 .cp{border:0;background:transparent;color:var(--mute);width:32px;height:32px;border-radius:6px;cursor:pointer;display:grid;place-items:center}
 .cp:hover{color:var(--ink);background:var(--card2)}.cp svg{width:15px;height:15px}
 .cp:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
-.fig-b{display:grid;grid-template-columns:1fr 1fr;gap:6px}.fig-b .btn.sm{padding:0 8px;font-size:12.5px;gap:4px}
+.fig-b{display:flex;gap:6px}.fig-b>*{flex:1}.fig-b [hidden]{display:none}.fig-b .btn.sm{padding:0 8px;font-size:12.5px;gap:4px}
 /* main */
 .main{margin-left:var(--sw)}
 .top{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 max(4vw,16px);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -215,9 +215,9 @@ footer{color:var(--mute);font-size:13px;border:0}
  </nav>
  <div class="side-foot">
   <div class="fig">
-   <div class="fig-h"><span class="fig-i"><img src="figma/figma.svg" alt=""></span><div><b>Figma</b><small>Presentación y archivo</small></div></div>
+   <div class="fig-h"><span class="fig-i"><img src="figma/figma.svg" alt=""></span><div><b>Figma</b><small>Presentación de marca</small></div></div>
    <div class="pw"><span>Contraseña</span><code>ATH.2026</code><button class="cp" data-copy="ATH.2026" aria-label="Copiar contraseña"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button></div>
-   <div class="fig-b"><a class="btn sm" href="https://www.figma.com/design/ZnUQJS15lSAZGtDVNkWWzd/Brand-Guidelines-AfterTheHype?node-id=175-4408&amp;t=JAXqKjfrsKxNGAOW-1" target="_blank" rel="noopener" aria-label="Abrir presentación en Figma">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a><button class="btn sm" id="dlfig" title="Brand_Guidelines_AfterTheHype.fig · 150 MB">Descargar .fig</button></div>
+   <div class="fig-b"><a class="btn sm" href="https://www.figma.com/design/ZnUQJS15lSAZGtDVNkWWzd/Brand-Guidelines-AfterTheHype?node-id=175-4408&amp;t=JAXqKjfrsKxNGAOW-1" target="_blank" rel="noopener" aria-label="Abrir presentación en Figma" id="openfig">Abrir en Figma <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a><button class="btn sm" id="dlfig" title="Brand_Guidelines_AfterTheHype.fig · 150 MB" hidden>Descargar .fig</button></div>
   </div>
   <button class="btn" data-zip="all">Descargar kit (.zip)</button>
   <small>Identidad by Alvaro Cáceres · 2026</small>
@@ -534,6 +534,7 @@ document.addEventListener('click',async e=>{
  catch(err){if(err&&err.code==='declined')return;if(err&&err.code==='rate_limited'){say('Espera un momento e inténtalo de nuevo');return}say('No se pudo descargar '+name)}
 });
 
+{const fbtn=document.getElementById('dlfig'),ob=document.getElementById('openfig');const show=()=>{fbtn.hidden=false;ob.firstChild.textContent='Abrir '};if(FIG_URL)show();else fetch('figma/ATH_fig.part00.txt',{method:'HEAD'}).then(r=>{if(r.ok)show()}).catch(()=>{})}
 fetch('manifest.json').then(r=>r.json()).then(m=>{manifest=m;render()}).catch(()=>render());
 }
 </script>
