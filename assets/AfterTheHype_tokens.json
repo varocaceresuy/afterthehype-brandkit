@@ -1,7 +1,7 @@
 {
   "brand": "After the Hype",
   "identity": "Lima y Azul",
-  "version": "1.0",
+  "version": "1.1",
   "principles": [
     "Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos).",
     "Midnight Navy es el color principal; Electric Lime es el acento.",
@@ -223,6 +223,35 @@
         "margin": 64
       }
     }
+  },
+  "iconography": {
+    "library": "Lucide",
+    "url": "https://lucide.dev",
+    "license": "ISC (gratuita)",
+    "stroke": 1.5,
+    "sizes": [
+      16,
+      20,
+      24
+    ],
+    "grid": 24,
+    "color": "Hereda el color del texto: text/secondary en reposo, text/primary activo, action/fg sobre action/bg",
+    "labelFont": "Inter Medium",
+    "gap": 8,
+    "alternatives": [
+      "Phosphor (Regular)",
+      "Heroicons (Outline)"
+    ]
+  },
+  "imagery": {
+    "tagline": "Delivery obsessed, Human powered.",
+    "photography": [
+      "Personas reales trabajando, momentos espontáneos",
+      "Luz natural y dura con sombras marcadas, tonos neutros",
+      "Acento de color solo con Electric Lime o Midnight Navy",
+      "Encuadres limpios con aire para logo o mensaje"
+    ],
+    "abstract": "Gradientes desenfocados de Electric Lime a verde y Sky para portadas, key visuals y fondos; texto en Midnight Navy o blanco con contraste"
   },
   "logo": {
     "primary": "Logo horizontal",

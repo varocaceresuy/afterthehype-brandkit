@@ -20,6 +20,7 @@
 <meta name="theme-color" content="#DBFF00">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <link rel="icon" href="assets/04_Favicon-AppIcon/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -181,6 +182,27 @@ tr:last-child td{border-bottom:0}
 .lt{font:700 clamp(24px,3vw,36px)/1 var(--sans);letter-spacing:-.02em}
 @media(max-width:1100px){.dd{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.dd{grid-template-columns:1fr}}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.g{margin:0;position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.g img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.g.w2{grid-column:span 2}.g.w2 img{aspect-ratio:auto;height:100%}
+.g.w3{grid-column:span 3}.g.w3 img{aspect-ratio:2.2/1}
+.g figcaption{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:500;background:rgba(17,24,39,.72);color:#F7FAFC;padding:4px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.crit{margin-top:16px}.crit ul{margin:12px 0 0;padding-left:20px}.crit li{margin:8px 0;color:var(--soft)}
+.icdemo{display:grid;grid-template-columns:320px minmax(0,1fr);gap:16px}
+.icnav{display:grid;gap:4px;align-content:start}
+.icnav div{display:flex;align-items:center;gap:12px;height:44px;padding:0 14px;border-radius:10px;font-weight:500;color:var(--soft)}
+.icnav div.on{background:var(--accent);color:var(--on-accent)}
+.icnav svg{width:20px;height:20px;stroke-width:1.5}
+.icgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.icgrid div{display:grid;justify-items:center;gap:8px;padding:16px 8px;border-radius:10px;border:1px solid var(--line);font-size:12px;color:var(--mute)}
+.icgrid svg{width:24px;height:24px;stroke-width:1.5;color:var(--ink)}
+.log .lv{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.log .lv:first-child{border-top:0}
+.log .lv b{font-size:15px}.log .lv span{display:block;font-size:13px;color:var(--mute)}
+.log ul{margin:0;padding-left:18px;color:var(--soft)}.log li{margin:4px 0}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.g.w3{grid-column:span 2}.icdemo{grid-template-columns:1fr}}
+@media(max-width:600px){.gal{grid-template-columns:1fr}.g.w2,.g.w3{grid-column:auto}.log .lv{grid-template-columns:1fr;gap:8px}}
 .rules ul{margin:0;padding-left:20px}.rules li{margin:8px 0;color:var(--soft)}
 .note{font-size:13px;color:var(--mute);margin-top:12px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:8px;font-size:14px;transition:transform .25s;z-index:30}
@@ -202,7 +224,7 @@ footer{color:var(--mute);font-size:13px;border:0}
 <aside class="side" id="side" aria-label="Índice">
  <div class="brand">
   <div class="mk"><img src="assets/03_Isotipo/SVG/ATH_Isotipo_White.svg" alt=""></div>
-  <div><b>After the Hype</b><small>Brand Kit · v1.0</small></div>
+  <div><b>After the Hype</b><small>Brand Kit · v<span class="ver">1.1</span></small></div>
  </div>
  <nav class="nav" id="nav">
   <div class="pill" id="pill"></div>
@@ -223,9 +245,13 @@ footer{color:var(--mute);font-size:13px;border:0}
   <h6>Layout</h6>
   <a href="#spacing"><i></i>Espaciado y grid</a>
   <a href="#radius"><i></i>Radios y elevación</a>
+  <h6>Aplicación</h6>
+  <a href="#imagenes"><i></i>Imágenes</a>
+  <a href="#iconografia"><i></i>Iconografía</a>
   <h6>Entrega</h6>
   <a href="#tokens"><i></i>Guía y tokens para IA</a>
   <a href="#uso"><i></i>Uso correcto</a>
+  <a href="#versiones"><i></i>Versiones</a>
  </nav>
  <div class="side-foot">
   <div class="fig">
@@ -329,6 +355,56 @@ footer{color:var(--mute);font-size:13px;border:0}
  <div class="elev" id="elev"></div>
 </div></section>
 
+<section class="band" id="imagenes" data-t="Imágenes"><div class="wrap">
+ <p class="eyebrow">Aplicación</p><h2>Imágenes</h2>
+ <p class="lead">El criterio visual de la marca: cómo tienen que ser las fotos y los fondos para que cualquier pieza, hecha por una persona o por una IA, se sienta After the Hype.</p>
+ <h3 class="sh">Fotografía</h3>
+ <div class="two crit">
+  <div class="panel" style="padding:20px 24px"><b>Criterio fotográfico</b><ul>
+   <li>Personas reales trabajando, en momentos espontáneos. Nada de poses de banco de imágenes.</li>
+   <li>Luz natural y dura, con sombras marcadas, sobre tonos neutros: grises, hormigón, blanco roto.</li>
+   <li>El color lo pone la marca: un acento de Electric Lime o Midnight Navy, nunca colores saturados ajenos.</li>
+   <li>Encuadres limpios, con aire para el logo o un mensaje corto.</li>
+  </ul></div>
+  <div class="panel" style="padding:20px 24px"><b>En aplicaciones</b><ul>
+   <li>El tagline del manual es <b>“Delivery obsessed, Human powered.”</b></li>
+   <li>Isotipo grande y recortado en merch y señalética; lockup horizontal en papelería y pantallas.</li>
+   <li>Soportes claros con logo Black o Navy; soportes oscuros con logo White.</li>
+   <li>Tipografía de apoyo siempre Inter.</li>
+  </ul></div>
+ </div>
+ <h3 class="sh">Fondos abstractos</h3>
+ <div class="gal">
+  <figure class="g w2"><img src="assets/05_Imagery/ATH_Fondo_Gradiente-01.jpg" alt="Gradiente radial Lima, verde y Sky" loading="lazy"><figcaption>Gradiente 01 · portadas y key visuals</figcaption></figure>
+  <figure class="g"><img src="assets/05_Imagery/ATH_Fondo_Gradiente-02.jpg" alt="Gradiente orgánico sobre Cloud White" loading="lazy"><figcaption>Gradiente 02 · fondos con aire</figcaption></figure>
+ </div>
+ <p class="note">Gradientes desenfocados de Electric Lime a verde y Sky, para portadas, slides de apertura, heroes web y fondos de redes. El texto encima va en Midnight Navy o blanco según la zona, siempre con contraste. No se usan detrás de bloques de lectura largos.</p>
+ <div class="sec-foot"><button class="btn ghost" data-zip="imagery">Descargar imágenes (.zip)</button></div>
+</div></section>
+
+<section class="band" id="iconografia" data-t="Iconografía"><div class="wrap">
+ <p class="eyebrow">Aplicación</p><h2>Iconografía</h2>
+ <p class="lead">La librería de la marca es <b>Lucide</b>: gratuita, de código abierto (licencia ISC) y con más de 1.500 íconos de geometría simple y trazo constante, la misma lógica de la slide 4.3 del manual. Tiene plugin de Figma y paquetes para web, React y apps.</p>
+ <div class="icdemo">
+  <div class="spec icnav" id="icnav"></div>
+  <div class="spec"><div class="icgrid" id="icgrid"></div></div>
+ </div>
+ <div class="two crit">
+  <div class="panel" style="padding:20px 24px"><b>Reglas</b><ul>
+   <li>Trazo de 1.5 px, esquinas redondeadas, sin rellenos.</li>
+   <li>Tamaños 16, 20 y 24 px, sobre grilla de 24 px.</li>
+   <li>El ícono toma el color del texto: <code>text/secondary</code> en reposo, <code>text/primary</code> activo y <code>action/fg</code> sobre un fondo <code>action/bg</code>.</li>
+   <li>Etiquetas en Inter Medium; separación ícono-texto de 8 px (4 px en botones pequeños).</li>
+  </ul></div>
+  <div class="panel" style="padding:20px 24px"><b>Recursos</b><ul>
+   <li>Web y descarga: <a href="https://lucide.dev" target="_blank" rel="noopener">lucide.dev</a></li>
+   <li>Figma: plugin “Lucide Icons” en la Community.</li>
+   <li>Código: <code>lucide-react</code>, <code>lucide-vue-next</code> o <code>lucide</code> (JS).</li>
+   <li>Alternativas compatibles si falta un ícono: Phosphor (peso Regular) o Heroicons (Outline).</li>
+  </ul></div>
+ </div>
+</div></section>
+
 <section class="band" id="tokens" data-t="Guía y tokens para IA"><div class="wrap">
  <p class="eyebrow">Entrega</p><h2>Guía y tokens para IA</h2>
  <p class="lead">Todos los criterios de esta página listos para una IA. El <b>Markdown</b> explica las reglas en texto y es lo primero que hay que cargar en un proyecto de Claude, ChatGPT, v0 o Cursor; el <b>JSON</b> trae los valores exactos y las <b>variables CSS</b> sirven para usarlos directo en código.</p>
@@ -343,6 +419,12 @@ footer{color:var(--mute);font-size:13px;border:0}
  <div class="dd" id="dos"></div>
  <h3 class="sh dd-h"><span class="bd no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No</h3>
  <div class="dd" id="donts"></div>
+</div></section>
+
+<section class="band" id="versiones" data-t="Versiones"><div class="wrap">
+ <p class="eyebrow">Entrega</p><h2>Versiones</h2>
+ <p class="lead">Cada cambio en el Brand Kit suma una versión. Esta es la <b>v<span class="ver">1.1</span></b>.</p>
+ <div class="panel log" id="changelog"></div>
 </div></section>
 
 <footer class="band"><div class="wrap">© 2026 After the Hype. Brand Kit generado desde el Brand Guidelines de Figma.</div></footer>
@@ -406,6 +488,12 @@ const DONTS=[
  [`<div class="stage" style="background:#1F2937"><img src="${L}Navy.svg" alt=""></div>`,'No usar con bajo contraste','Navy sobre fondos oscuros pierde lectura.'],
  [`<div class="stage" style="background:#F7FAFC"><img src="${L}Navy.svg" alt="" style="transform:rotate(-14deg)"></div>`,'No rotar','El logo siempre va horizontal.'],
  [`<div class="stage"><div class="split"><div style="background:#FFFFFF"><span class="mini" style="background:#DBFF00;color:#FFFFFF">Empezar</span></div><div style="background:#FFFFFF"><span class="lt" style="color:#DBFF00">Hype</span></div></div></div>`,'No Lima con texto blanco ni como texto','No cumple contraste. En Light, los botones van en Navy.']];
+const VERSION='1.1';
+const CHANGELOG=[
+ ['1.1','20 nov 2026',['Nueva sección Imágenes: criterio fotográfico, uso en aplicaciones y fondos abstractos, con descarga en ZIP.','Nueva sección Iconografía: Lucide como librería de la marca, con reglas de trazo, tamaño y color.','Guía .md y tokens JSON actualizados con imágenes, iconografía y versión.']],
+ ['1.0','20 nov 2026',['Entrega inicial: logos en todos los formatos, favicon y app icons.','Color: paleta primaria, escalas Midnight Navy y Zinc, tokens semánticos y regla de botones según el tema.','Tipografía Inter, espaciado de 8 px, grid, radios y elevación.','Uso correcto, guía .md y tokens para IA, acceso a Figma y descarga del .fig.']]];
+const ICONS=[['house','Inicio'],['search','Buscar'],['layout-dashboard','Dashboard'],['box','Proyecto'],['users','Equipo'],['calendar','Agenda'],['message-circle','Mensajes'],['bell','Avisos'],['file-text','Documento'],['credit-card','Pagos'],['settings','Ajustes'],['arrow-up-right','Enlace'],['check','Confirmar'],['x','Cerrar'],['heart','Favorito'],['shopping-bag','Compra']];
+const NAVDEMO=[['layout-dashboard','Dashboard',1],['box','Projects'],['circle-user','Clients'],['activity','Analytics'],['layout-grid','Sprints'],['file-text','Reports']];
 const ICO_OK=`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`,ICO_NO=`<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
 const exs=(arr,ok)=>arr.map(([st,t,d])=>`<figure class="ex ${ok?'ok':'no'}" style="margin:0">${st}<figcaption class="cap"><span class="bd ${ok?'ok':'no'}">${ok?ICO_OK:ICO_NO}</span><div><b>${t}</b><span>${d}</span></div></figcaption></figure>`).join('');
 let manifest=[];
@@ -415,7 +503,7 @@ const btn=(path,label)=>{const m=manifest.find(x=>x.path===path);return `<button
 function tokens(){
  const color={brand:Object.fromEntries(PAL.map(([n,k,h])=>[k,h])),'midnight-navy':Object.fromEntries(MN.map(([s,h])=>[s,h])),zinc:Object.fromEntries(ZN.map(([s,h])=>[s,h])),'deep-sky':'#1E6E96'};
  const semantic={light:{},dark:{}};SEM.forEach(([k,l,d])=>{semantic.light[k]=`{${l}} ${HEX[l]}`;semantic.dark[k]=`{${d}} ${HEX[d]}`});
- return {brand:'After the Hype',identity:'Lima y Azul',version:'1.0',
+ return {brand:'After the Hype',identity:'Lima y Azul',version:VERSION,
   principles:['Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos).','Midnight Navy es el color principal; Electric Lime es el acento.','Botones y controles (action): en Dark usan Electric Lime con texto midnight-navy/900; en Light usan midnight-navy/900 con texto cloud-white. Electric Lime con texto blanco no cumple contraste.','Electric Lime en Light solo para chips, badges y destacados (highlight), siempre con texto midnight-navy/900.','Usar tokens semánticos, no HEX, para que los componentes funcionen en light y dark.','Dark mode: fondo midnight-navy/950; light mode: fondo midnight-navy/100.'],
   color,semantic,
   typography:{family:'Inter',stack:'"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',license:'SIL Open Font License (gratuita)',source:'https://fonts.google.com/specimen/Inter',weights:{light:300,regular:400,medium:500,semibold:600,bold:700},scale:Object.fromEntries(TYPE.map(([k,s,l,w,ls,u])=>[k,{size:s,lineHeight:l,weight:w,letterSpacing:ls,use:u}]))},
@@ -423,6 +511,8 @@ function tokens(){
   radius:Object.fromEntries(RAD.map(([k,px])=>[k,px])),
   elevation:Object.fromEntries(ELEV.map(([k,v])=>[k,v])),
   layout:{container:1280,breakpoints:Object.fromEntries(GRID.map(([k,w,c,g,m])=>[k,{minWidth:parseInt(w.replace(/\D/g,'')),columns:+c,gutter:parseInt(g),margin:parseInt(m)}]))},
+  iconography:{library:'Lucide',url:'https://lucide.dev',license:'ISC (gratuita)',stroke:1.5,sizes:[16,20,24],grid:24,color:'Hereda el color del texto: text/secondary en reposo, text/primary activo, action/fg sobre action/bg',labelFont:'Inter Medium',gap:8,alternatives:['Phosphor (Regular)','Heroicons (Outline)']},
+  imagery:{tagline:'Delivery obsessed, Human powered.',photography:['Personas reales trabajando, momentos espontáneos','Luz natural y dura con sombras marcadas, tonos neutros','Acento de color solo con Electric Lime o Midnight Navy','Encuadres limpios con aire para logo o mensaje'],abstract:'Gradientes desenfocados de Electric Lime a verde y Sky para portadas, key visuals y fondos; texto en Midnight Navy o blanco con contraste'},
   logo:{primary:'Logo horizontal',clearspace:'Altura del isotipo alrededor del logo',approvedColors:{navy:'#111827',black:'#000000',white:'#F7FAFC'}}};
 }
 function cssVars(){
@@ -442,7 +532,7 @@ function mdDoc(){
  return [
 '# After the Hype — Guía de marca para IA',
 '',
-'Identidad **Lima y Azul** · v1.0 · Identidad by Alvaro Cáceres · 2026',
+'Identidad **Lima y Azul** · v'+VERSION+' · Identidad by Alvaro Cáceres · 2026',
 '',
 '> Usa este documento como contexto para crear cualquier pieza de After the Hype: presentaciones, webs, apps, newsletters, redes sociales o documentos. Sigue estas reglas siempre; si algo no está definido aquí, elige la opción más sobria y con mejor contraste. Valores exactos en `AfterTheHype_tokens.json`.',
 '',
@@ -515,7 +605,31 @@ tbl(['Sombra','Valor','Uso'],ELEV.map(([k,v,u])=>['`shadow-'+k+'`','`'+v+'`',u])
 '',
 'Las sombras solo se usan en Light. En Dark la profundidad se resuelve con el siguiente tono de superficie y un borde de 1 px (`border/default`).',
 '',
-'## 7. Componentes base (criterio)',
+'## 7. Imágenes',
+'',
+'**Tagline:** “Delivery obsessed, Human powered.”',
+'',
+'**Fotografía**',
+'',
+'- Personas reales trabajando, en momentos espontáneos. Nada de poses de banco de imágenes.',
+'- Luz natural y dura, con sombras marcadas, sobre tonos neutros (grises, hormigón, blanco roto).',
+'- El color lo pone la marca: un acento de Electric Lime o Midnight Navy.',
+'- Encuadres limpios, con aire para el logo o un mensaje corto.',
+'',
+'**Aplicaciones:** isotipo grande y recortado en merch y señalética; lockup horizontal en papelería y pantallas; logo Black o Navy en soportes claros y White en oscuros.',
+'',
+'**Fondos abstractos** (`assets/05_Imagery`): gradientes desenfocados de Electric Lime a verde y Sky para portadas, slides de apertura, heroes web y redes. Texto encima en Midnight Navy o blanco con contraste; nunca detrás de textos largos.',
+'',
+'## 8. Iconografía',
+'',
+'- **Librería:** Lucide (https://lucide.dev), gratuita, licencia ISC. Plugin de Figma “Lucide Icons”; paquetes `lucide-react`, `lucide-vue-next`, `lucide`.',
+'- **Trazo:** 1.5 px, esquinas redondeadas, sin rellenos.',
+'- **Tamaños:** 16, 20 y 24 px sobre grilla de 24 px.',
+'- **Color:** hereda el del texto (`text/secondary` en reposo, `text/primary` activo, `action/fg` sobre `action/bg`).',
+'- **Etiquetas:** Inter Medium; separación ícono-texto 8 px (4 px en botones pequeños).',
+'- **Alternativas:** Phosphor (Regular) o Heroicons (Outline) si falta un ícono.',
+'',
+'## 9. Componentes base (criterio)',
 '',
 '- **Botón principal:** fondo `action/bg`, texto `action/fg`, `radius-sm` (8 px), alto 40–48 px, padding horizontal 16–24 px, estilo `label`.',
 '- **Botón secundario:** transparente, borde 1 px `border/strong`, texto `text/primary`.',
@@ -523,7 +637,7 @@ tbl(['Sombra','Valor','Uso'],ELEV.map(([k,v,u])=>['`shadow-'+k+'`','`'+v+'`',u])
 '- **Card:** fondo `bg/surface`, borde `border/default`, `radius-md` (16 px), padding `space-3` (24 px); en Light, `shadow-e1`.',
 '- **Chip o badge:** `highlight/bg` con texto `highlight/fg`, `radius-full`, estilo `caption`.',
 '',
-'## 8. Uso correcto',
+'## 10. Uso correcto',
 '',
 '**Sí**',
 '',
@@ -533,19 +647,23 @@ tbl(['Sombra','Valor','Uso'],ELEV.map(([k,v,u])=>['`shadow-'+k+'`','`'+v+'`',u])
 '',
 ...DONTS.map(([,t,d])=>'- '+t+': '+d),
 '',
-'## 9. Recursos',
+'## 11. Recursos',
 '',
 '- **Brand Kit online:** https://afterthehype-brandkit.vercel.app',
 '- **Figma (presentación de marca):** '+FIGMA,
 '- **Tokens:** `AfterTheHype_tokens.json`',
 '',
-'## 10. Cómo pedirle algo a una IA',
+'## 12. Cómo pedirle algo a una IA',
 '',
 '```',
 'Usa la guía de marca de After the Hype adjunta (AfterTheHype_brand.md y AfterTheHype_tokens.json).',
 'Crea [pieza: landing / slide / post / newsletter] en modo [Dark / Light] para [objetivo].',
-'Respeta los tokens semánticos, Inter, la escala de 8 px y la regla de botones según el tema.',
+'Respeta los tokens semánticos, Inter, la escala de 8 px, íconos Lucide y la regla de botones según el tema.',
 '```',
+'',
+'## Versiones',
+'',
+...CHANGELOG.map(([v,d,items])=>'- **v'+v+'** ('+d+'): '+items.join(' ')),
 ''].join('\n');
 }
 let tab='md';
@@ -583,6 +701,11 @@ function render(){
  document.getElementById('elev').innerHTML=ELEV.map(([k,v,u])=>`<div style="box-shadow:${v}"><b>shadow-${k}</b><span>${u}</span></div>`).join('');
  const files=manifest.length;
  document.getElementById('chips').innerHTML=[[files||78,'archivos de logo'],[MN.length+ZN.length+4,'colores'],[TYPE.length,'estilos de texto'],[SEM.length,'tokens semánticos']].map(([n,l])=>`<div class="chip"><b>${n}</b><span>${l}</span></div>`).join('');
+ document.getElementById('icgrid').innerHTML=ICONS.map(([n,l])=>`<div><i data-lucide="${n}"></i>${l}</div>`).join('');
+ document.getElementById('icnav').innerHTML=NAVDEMO.map(([n,l,on])=>`<div class="${on?'on':''}"><i data-lucide="${n}"></i>${l}</div>`).join('');
+ if(window.lucide&&lucide.createIcons)lucide.createIcons();
+ document.getElementById('changelog').innerHTML=CHANGELOG.map(([v,d,items])=>`<div class="lv"><div><b>v${v}</b><span>${d}</span></div><ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
+ document.querySelectorAll('.ver').forEach(e=>e.textContent=VERSION);
  document.getElementById('dos').innerHTML=exs(DOS,true);
  document.getElementById('donts').innerHTML=exs(DONTS,false);
  showCode();setupNav();
@@ -644,7 +767,7 @@ document.addEventListener('click',async e=>{
  if(c){try{await navigator.clipboard.writeText(c.dataset.copy);say((c.dataset.copy==='ATH.2026'?'Contraseña':c.dataset.copy)+' copiado'.replace('copiado',c.dataset.copy==='ATH.2026'?'copiada':'copiado'))}catch{say('No se pudo copiar')}return}
  const z=e.target.closest('[data-zip]');
  if(z){const k=z.dataset.zip;const sel=manifest.filter(m=>k==='all'||m.group===k);
-  const zname=k==='all'?'AfterTheHype_AssetKit.zip':`ATH_${{horizontal:'Logo-Horizontal',vertical:'Logo-Vertical',isotipo:'Isotipo',icon:'Favicon-AppIcon'}[k]}.zip`;
+  const zname=k==='all'?'AfterTheHype_AssetKit.zip':`ATH_${{horizontal:'Logo-Horizontal',vertical:'Logo-Vertical',isotipo:'Isotipo',icon:'Favicon-AppIcon',imagery:'Imagenes'}[k]}.zip`;
   if(!window.JSZip){try{const r=await fetch('zips/'+zname);if(!r.ok)throw 0;await saveFile(zname,await r.blob());say(zname+' descargado')}catch(err){if(err&&err.code==='declined')return;say('No se pudo descargar '+zname)}return}
   
   z.disabled=true;const t=z.textContent;z.textContent='Preparando ZIP…';

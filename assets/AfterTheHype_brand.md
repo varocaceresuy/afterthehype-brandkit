@@ -1,6 +1,6 @@
 # After the Hype — Guía de marca para IA
 
-Identidad **Lima y Azul** · v1.0 · Identidad by Alvaro Cáceres · 2026
+Identidad **Lima y Azul** · v1.1 · Identidad by Alvaro Cáceres · 2026
 
 > Usa este documento como contexto para crear cualquier pieza de After the Hype: presentaciones, webs, apps, newsletters, redes sociales o documentos. Sigue estas reglas siempre; si algo no está definido aquí, elige la opción más sobria y con mejor contraste. Valores exactos en `AfterTheHype_tokens.json`.
 
@@ -158,7 +158,31 @@ Contenedor máximo: 1280 px.
 
 Las sombras solo se usan en Light. En Dark la profundidad se resuelve con el siguiente tono de superficie y un borde de 1 px (`border/default`).
 
-## 7. Componentes base (criterio)
+## 7. Imágenes
+
+**Tagline:** “Delivery obsessed, Human powered.”
+
+**Fotografía**
+
+- Personas reales trabajando, en momentos espontáneos. Nada de poses de banco de imágenes.
+- Luz natural y dura, con sombras marcadas, sobre tonos neutros (grises, hormigón, blanco roto).
+- El color lo pone la marca: un acento de Electric Lime o Midnight Navy.
+- Encuadres limpios, con aire para el logo o un mensaje corto.
+
+**Aplicaciones:** isotipo grande y recortado en merch y señalética; lockup horizontal en papelería y pantallas; logo Black o Navy en soportes claros y White en oscuros.
+
+**Fondos abstractos** (`assets/05_Imagery`): gradientes desenfocados de Electric Lime a verde y Sky para portadas, slides de apertura, heroes web y redes. Texto encima en Midnight Navy o blanco con contraste; nunca detrás de textos largos.
+
+## 8. Iconografía
+
+- **Librería:** Lucide (https://lucide.dev), gratuita, licencia ISC. Plugin de Figma “Lucide Icons”; paquetes `lucide-react`, `lucide-vue-next`, `lucide`.
+- **Trazo:** 1.5 px, esquinas redondeadas, sin rellenos.
+- **Tamaños:** 16, 20 y 24 px sobre grilla de 24 px.
+- **Color:** hereda el del texto (`text/secondary` en reposo, `text/primary` activo, `action/fg` sobre `action/bg`).
+- **Etiquetas:** Inter Medium; separación ícono-texto 8 px (4 px en botones pequeños).
+- **Alternativas:** Phosphor (Regular) o Heroicons (Outline) si falta un ícono.
+
+## 9. Componentes base (criterio)
 
 - **Botón principal:** fondo `action/bg`, texto `action/fg`, `radius-sm` (8 px), alto 40–48 px, padding horizontal 16–24 px, estilo `label`.
 - **Botón secundario:** transparente, borde 1 px `border/strong`, texto `text/primary`.
@@ -166,7 +190,7 @@ Las sombras solo se usan en Light. En Dark la profundidad se resuelve con el sig
 - **Card:** fondo `bg/surface`, borde `border/default`, `radius-md` (16 px), padding `space-3` (24 px); en Light, `shadow-e1`.
 - **Chip o badge:** `highlight/bg` con texto `highlight/fg`, `radius-full`, estilo `caption`.
 
-## 8. Uso correcto
+## 10. Uso correcto
 
 **Sí**
 
@@ -186,16 +210,21 @@ Las sombras solo se usan en Light. En Dark la profundidad se resuelve con el sig
 - No rotar: El logo siempre va horizontal.
 - No Lima con texto blanco ni como texto: No cumple contraste. En Light, los botones van en Navy.
 
-## 9. Recursos
+## 11. Recursos
 
 - **Brand Kit online:** https://afterthehype-brandkit.vercel.app
 - **Figma (presentación de marca):** https://www.figma.com/design/ZnUQJS15lSAZGtDVNkWWzd/Brand-Guidelines-AfterTheHype?node-id=175-4408&t=JAXqKjfrsKxNGAOW-1
 - **Tokens:** `AfterTheHype_tokens.json`
 
-## 10. Cómo pedirle algo a una IA
+## 12. Cómo pedirle algo a una IA
 
 ```
 Usa la guía de marca de After the Hype adjunta (AfterTheHype_brand.md y AfterTheHype_tokens.json).
 Crea [pieza: landing / slide / post / newsletter] en modo [Dark / Light] para [objetivo].
-Respeta los tokens semánticos, Inter, la escala de 8 px y la regla de botones según el tema.
+Respeta los tokens semánticos, Inter, la escala de 8 px, íconos Lucide y la regla de botones según el tema.
 ```
+
+## Versiones
+
+- **v1.1** (20 nov 2026): Nueva sección Imágenes: criterio fotográfico, uso en aplicaciones y fondos abstractos, con descarga en ZIP. Nueva sección Iconografía: Lucide como librería de la marca, con reglas de trazo, tamaño y color. Guía .md y tokens JSON actualizados con imágenes, iconografía y versión.
+- **v1.0** (20 nov 2026): Entrega inicial: logos en todos los formatos, favicon y app icons. Color: paleta primaria, escalas Midnight Navy y Zinc, tokens semánticos y regla de botones según el tema. Tipografía Inter, espaciado de 8 px, grid, radios y elevación. Uso correcto, guía .md y tokens para IA, acceso a Figma y descarga del .fig.

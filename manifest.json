@@ -622,5 +622,21 @@
 "label": "Favicon 16px",
 "fmt": "PNG 16px",
 "bytes": 447
+},
+{
+"path": "assets/05_Imagery/ATH_Fondo_Gradiente-01.jpg",
+"group": "imagery",
+"kind": "imagery",
+"label": "ATH_Fondo_Gradiente-01.jpg",
+"fmt": "JPG",
+"bytes": 21440
+},
+{
+"path": "assets/05_Imagery/ATH_Fondo_Gradiente-02.jpg",
+"group": "imagery",
+"kind": "imagery",
+"label": "ATH_Fondo_Gradiente-02.jpg",
+"fmt": "JPG",
+"bytes": 16362
 }
 ]
