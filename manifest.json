@@ -624,19 +624,43 @@
 "bytes": 447
 },
 {
-"path": "assets/05_Imagery/ATH_Fondo_Gradiente-01.jpg",
+"path": "assets/05_Imagery/ATH_Foto_Delivery-Obsessed.jpg",
 "group": "imagery",
 "kind": "imagery",
-"label": "ATH_Fondo_Gradiente-01.jpg",
+"label": "ATH_Foto_Delivery-Obsessed.jpg",
 "fmt": "JPG",
-"bytes": 21440
+"bytes": 331304
 },
 {
-"path": "assets/05_Imagery/ATH_Fondo_Gradiente-02.jpg",
+"path": "assets/05_Imagery/ATH_Gradiente_Animado.mp4",
 "group": "imagery",
 "kind": "imagery",
-"label": "ATH_Fondo_Gradiente-02.jpg",
+"label": "ATH_Gradiente_Animado.mp4",
+"fmt": "MP4",
+"bytes": 4188855
+},
+{
+"path": "assets/05_Imagery/ATH_Gradiente_Animado_poster.jpg",
+"group": "imagery",
+"kind": "imagery",
+"label": "ATH_Gradiente_Animado_poster.jpg",
 "fmt": "JPG",
-"bytes": 16362
+"bytes": 90494
+},
+{
+"path": "assets/05_Imagery/ATH_Gradiente_Grano.jpg",
+"group": "imagery",
+"kind": "imagery",
+"label": "ATH_Gradiente_Grano.jpg",
+"fmt": "JPG",
+"bytes": 1171683
+},
+{
+"path": "assets/05_Imagery/ATH_Gradiente_Radial.jpg",
+"group": "imagery",
+"kind": "imagery",
+"label": "ATH_Gradiente_Radial.jpg",
+"fmt": "JPG",
+"bytes": 176511
 }
 ]

@@ -1,7 +1,7 @@
 {
   "brand": "After the Hype",
   "identity": "Lima y Azul",
-  "version": "1.1",
+  "version": "1.2",
   "principles": [
     "Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos).",
     "Midnight Navy es el color principal; Electric Lime es el acento.",
@@ -247,11 +247,18 @@
     "tagline": "Delivery obsessed, Human powered.",
     "photography": [
       "Personas reales trabajando, momentos espontáneos",
-      "Luz natural y dura con sombras marcadas, tonos neutros",
-      "Acento de color solo con Electric Lime o Midnight Navy",
-      "Encuadres limpios con aire para logo o mensaje"
+      "Luz natural o de escena con contraste; tonos neutros y fríos",
+      "Un solo acento de color de marca (Sky, Electric Lime o Midnight Navy)",
+      "Aire para el tagline o un mensaje corto en Inter"
     ],
-    "abstract": "Gradientes desenfocados de Electric Lime a verde y Sky para portadas, key visuals y fondos; texto en Midnight Navy o blanco con contraste"
+    "abstract": "Gradientes desenfocados (grano sutil o vidrio translúcido) en la gama Electric Lime, verde y Sky, sobre Cloud White o Midnight Navy; texto Midnight Navy en zonas claras y blanco o Electric Lime en zonas oscuras",
+    "video": "Gradiente animado en loop y sin sonido para heroes web, eventos y redes; MP4 H.264 con imagen de respaldo",
+    "files": [
+      "assets/05_Imagery/ATH_Foto_Delivery-Obsessed.jpg",
+      "assets/05_Imagery/ATH_Gradiente_Radial.jpg",
+      "assets/05_Imagery/ATH_Gradiente_Grano.jpg",
+      "assets/05_Imagery/ATH_Gradiente_Animado.mp4"
+    ]
   },
   "logo": {
     "primary": "Logo horizontal",

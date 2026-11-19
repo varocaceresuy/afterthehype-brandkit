@@ -188,6 +188,17 @@ tr:last-child td{border-bottom:0}
 .g.w2{grid-column:span 2}.g.w2 img{aspect-ratio:auto;height:100%}
 .g.w3{grid-column:span 3}.g.w3 img{aspect-ratio:2.2/1}
 .g figcaption{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:500;background:rgba(17,24,39,.72);color:#F7FAFC;padding:4px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.photo{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:12px;margin-bottom:16px}
+.photo .g img{aspect-ratio:auto;height:100%}
+.crit1 ul{margin:12px 0 0;padding-left:20px}.crit1 li{margin:8px 0;color:var(--soft)}
+.abs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.abs .g img,.abs .g video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 88%,transparent) 42%,color-mix(in srgb,var(--bg) 20%,transparent) 100%)}
+.hero .chip{background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(10px)}
+@media(max-width:900px){.photo,.abs{grid-template-columns:1fr}.hero::before{background:color-mix(in srgb,var(--bg) 80%,transparent)}}
+@media(prefers-reduced-motion:reduce){.hero-bg{display:none}}
 .crit{margin-top:16px}.crit ul{margin:12px 0 0;padding-left:20px}.crit li{margin:8px 0;color:var(--soft)}
 .icdemo{display:grid;grid-template-columns:320px minmax(0,1fr);gap:16px}
 .icnav{display:grid;gap:4px;align-content:start}
@@ -277,7 +288,7 @@ footer{color:var(--mute);font-size:13px;border:0}
  </div>
 </header>
 
-<section class="band hero" id="inicio" data-t="Resumen"><div class="wrap">
+<section class="band hero" id="inicio" data-t="Resumen"><video class="hero-bg" src="assets/05_Imagery/ATH_Gradiente_Animado.mp4" poster="assets/05_Imagery/ATH_Gradiente_Animado_poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video><div class="wrap">
  <img class="lockup for-dark" src="assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_White.svg" alt="After the Hype">
  <img class="lockup for-light" src="assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_Navy.svg" alt="After the Hype">
  <h1>Brand Kit</h1>
@@ -357,29 +368,37 @@ footer{color:var(--mute);font-size:13px;border:0}
 
 <section class="band" id="imagenes" data-t="Imágenes"><div class="wrap">
  <p class="eyebrow">Aplicación</p><h2>Imágenes</h2>
- <p class="lead">El criterio visual de la marca: cómo tienen que ser las fotos y los fondos para que cualquier pieza, hecha por una persona o por una IA, se sienta After the Hype.</p>
+ <p class="lead">El criterio visual de la marca en tres piezas: una fotografía de referencia, dos fondos abstractos y un gradiente animado. Con esto, cualquier pieza hecha por una persona o por una IA se siente After the Hype.</p>
  <h3 class="sh">Fotografía</h3>
- <div class="two crit">
-  <div class="panel" style="padding:20px 24px"><b>Criterio fotográfico</b><ul>
+ <div class="photo">
+  <figure class="g"><img src="assets/05_Imagery/ATH_Foto_Delivery-Obsessed.jpg" alt="Persona trabajando con el tagline Delivery obsessed, Human powered en pantalla" loading="lazy"><figcaption>Delivery obsessed, Human powered.</figcaption></figure>
+  <div class="panel crit1" style="padding:20px 24px"><b>Criterio fotográfico</b><ul>
    <li>Personas reales trabajando, en momentos espontáneos. Nada de poses de banco de imágenes.</li>
-   <li>Luz natural y dura, con sombras marcadas, sobre tonos neutros: grises, hormigón, blanco roto.</li>
-   <li>El color lo pone la marca: un acento de Electric Lime o Midnight Navy, nunca colores saturados ajenos.</li>
-   <li>Encuadres limpios, con aire para el logo o un mensaje corto.</li>
-  </ul></div>
-  <div class="panel" style="padding:20px 24px"><b>En aplicaciones</b><ul>
-   <li>El tagline del manual es <b>“Delivery obsessed, Human powered.”</b></li>
-   <li>Isotipo grande y recortado en merch y señalética; lockup horizontal en papelería y pantallas.</li>
-   <li>Soportes claros con logo Black o Navy; soportes oscuros con logo White.</li>
-   <li>Tipografía de apoyo siempre Inter.</li>
+   <li>Luz natural o de escena, con contraste y sombras; tonos neutros y fríos.</li>
+   <li>Un solo acento de color de la marca en la escena (Sky, Electric Lime o Midnight Navy).</li>
+   <li>Aire para el tagline o un mensaje corto, en Inter y en blanco sobre zonas oscuras.</li>
   </ul></div>
  </div>
  <h3 class="sh">Fondos abstractos</h3>
- <div class="gal">
-  <figure class="g w2"><img src="assets/05_Imagery/ATH_Fondo_Gradiente-01.jpg" alt="Gradiente radial Lima, verde y Sky" loading="lazy"><figcaption>Gradiente 01 · portadas y key visuals</figcaption></figure>
-  <figure class="g"><img src="assets/05_Imagery/ATH_Fondo_Gradiente-02.jpg" alt="Gradiente orgánico sobre Cloud White" loading="lazy"><figcaption>Gradiente 02 · fondos con aire</figcaption></figure>
+ <div class="abs">
+  <figure class="g"><img src="assets/05_Imagery/ATH_Gradiente_Radial.jpg" alt="Gradiente radial Lima, verde y Sky" loading="lazy"><figcaption>Radial · portadas y key visuals</figcaption></figure>
+  <figure class="g"><img src="assets/05_Imagery/ATH_Gradiente_Grano.jpg" alt="Gradiente con grano de Cloud White a azul y verde" loading="lazy"><figcaption>Grano · fondos con aire para texto</figcaption></figure>
+  <figure class="g vid"><video src="assets/05_Imagery/ATH_Gradiente_Animado.mp4" poster="assets/05_Imagery/ATH_Gradiente_Animado_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Animado · video, web y redes</figcaption></figure>
  </div>
- <p class="note">Gradientes desenfocados de Electric Lime a verde y Sky, para portadas, slides de apertura, heroes web y fondos de redes. El texto encima va en Midnight Navy o blanco según la zona, siempre con contraste. No se usan detrás de bloques de lectura largos.</p>
- <div class="sec-foot"><button class="btn ghost" data-zip="imagery">Descargar imágenes (.zip)</button></div>
+ <div class="two crit">
+  <div class="panel" style="padding:20px 24px"><b>Cómo usar los gradientes</b><ul>
+   <li>Siempre en la gama Electric Lime, verde y Sky, sobre Cloud White o Midnight Navy.</li>
+   <li>Desenfocados, con grano sutil o con formas de vidrio translúcido; sin bordes duros ni ilustraciones planas.</li>
+   <li>El texto va en Midnight Navy sobre zonas claras y en blanco o Electric Lime sobre zonas oscuras.</li>
+   <li>Para portadas, aperturas de slides, heroes web, fondos de redes y video. No detrás de textos largos.</li>
+  </ul></div>
+  <div class="panel" style="padding:20px 24px"><b>Video</b><ul>
+   <li>El gradiente animado se usa en loop y sin sonido: heroes web, pantallas de evento, stories y reels.</li>
+   <li>Encima, solo el logo o una frase corta.</li>
+   <li>Para web, exportar en MP4 (H.264) y siempre con una imagen de respaldo.</li>
+  </ul></div>
+ </div>
+ <div class="sec-foot"><button class="btn ghost" data-zip="imagery">Descargar imágenes y video (.zip)</button></div>
 </div></section>
 
 <section class="band" id="iconografia" data-t="Iconografía"><div class="wrap">
@@ -488,8 +507,9 @@ const DONTS=[
  [`<div class="stage" style="background:#1F2937"><img src="${L}Navy.svg" alt=""></div>`,'No usar con bajo contraste','Navy sobre fondos oscuros pierde lectura.'],
  [`<div class="stage" style="background:#F7FAFC"><img src="${L}Navy.svg" alt="" style="transform:rotate(-14deg)"></div>`,'No rotar','El logo siempre va horizontal.'],
  [`<div class="stage"><div class="split"><div style="background:#FFFFFF"><span class="mini" style="background:#DBFF00;color:#FFFFFF">Empezar</span></div><div style="background:#FFFFFF"><span class="lt" style="color:#DBFF00">Hype</span></div></div></div>`,'No Lima con texto blanco ni como texto','No cumple contraste. En Light, los botones van en Navy.']];
-const VERSION='1.1';
+const VERSION='1.2';
 const CHANGELOG=[
+ ['1.2','20 nov 2026',['Imágenes de referencia de la marca: una fotografía, dos fondos abstractos y el gradiente animado en video, en reemplazo de las capturas del Figma.','Reglas de uso de gradientes y video.','El gradiente animado pasa a ser el fondo del inicio del Brand Kit.']],
  ['1.1','20 nov 2026',['Nueva sección Imágenes: criterio fotográfico, uso en aplicaciones y fondos abstractos, con descarga en ZIP.','Nueva sección Iconografía: Lucide como librería de la marca, con reglas de trazo, tamaño y color.','Guía .md y tokens JSON actualizados con imágenes, iconografía y versión.']],
  ['1.0','20 nov 2026',['Entrega inicial: logos en todos los formatos, favicon y app icons.','Color: paleta primaria, escalas Midnight Navy y Zinc, tokens semánticos y regla de botones según el tema.','Tipografía Inter, espaciado de 8 px, grid, radios y elevación.','Uso correcto, guía .md y tokens para IA, acceso a Figma y descarga del .fig.']]];
 const ICONS=[['house','Inicio'],['search','Buscar'],['layout-dashboard','Dashboard'],['box','Proyecto'],['users','Equipo'],['calendar','Agenda'],['message-circle','Mensajes'],['bell','Avisos'],['file-text','Documento'],['credit-card','Pagos'],['settings','Ajustes'],['arrow-up-right','Enlace'],['check','Confirmar'],['x','Cerrar'],['heart','Favorito'],['shopping-bag','Compra']];
@@ -512,7 +532,7 @@ function tokens(){
   elevation:Object.fromEntries(ELEV.map(([k,v])=>[k,v])),
   layout:{container:1280,breakpoints:Object.fromEntries(GRID.map(([k,w,c,g,m])=>[k,{minWidth:parseInt(w.replace(/\D/g,'')),columns:+c,gutter:parseInt(g),margin:parseInt(m)}]))},
   iconography:{library:'Lucide',url:'https://lucide.dev',license:'ISC (gratuita)',stroke:1.5,sizes:[16,20,24],grid:24,color:'Hereda el color del texto: text/secondary en reposo, text/primary activo, action/fg sobre action/bg',labelFont:'Inter Medium',gap:8,alternatives:['Phosphor (Regular)','Heroicons (Outline)']},
-  imagery:{tagline:'Delivery obsessed, Human powered.',photography:['Personas reales trabajando, momentos espontáneos','Luz natural y dura con sombras marcadas, tonos neutros','Acento de color solo con Electric Lime o Midnight Navy','Encuadres limpios con aire para logo o mensaje'],abstract:'Gradientes desenfocados de Electric Lime a verde y Sky para portadas, key visuals y fondos; texto en Midnight Navy o blanco con contraste'},
+  imagery:{tagline:'Delivery obsessed, Human powered.',photography:['Personas reales trabajando, momentos espontáneos','Luz natural o de escena con contraste; tonos neutros y fríos','Un solo acento de color de marca (Sky, Electric Lime o Midnight Navy)','Aire para el tagline o un mensaje corto en Inter'],abstract:'Gradientes desenfocados (grano sutil o vidrio translúcido) en la gama Electric Lime, verde y Sky, sobre Cloud White o Midnight Navy; texto Midnight Navy en zonas claras y blanco o Electric Lime en zonas oscuras',video:'Gradiente animado en loop y sin sonido para heroes web, eventos y redes; MP4 H.264 con imagen de respaldo',files:['assets/05_Imagery/ATH_Foto_Delivery-Obsessed.jpg','assets/05_Imagery/ATH_Gradiente_Radial.jpg','assets/05_Imagery/ATH_Gradiente_Grano.jpg','assets/05_Imagery/ATH_Gradiente_Animado.mp4']},
   logo:{primary:'Logo horizontal',clearspace:'Altura del isotipo alrededor del logo',approvedColors:{navy:'#111827',black:'#000000',white:'#F7FAFC'}}};
 }
 function cssVars(){
@@ -609,16 +629,23 @@ tbl(['Sombra','Valor','Uso'],ELEV.map(([k,v,u])=>['`shadow-'+k+'`','`'+v+'`',u])
 '',
 '**Tagline:** “Delivery obsessed, Human powered.”',
 '',
-'**Fotografía**',
+'**Fotografía** (referencia: `assets/05_Imagery/ATH_Foto_Delivery-Obsessed.jpg`)',
 '',
 '- Personas reales trabajando, en momentos espontáneos. Nada de poses de banco de imágenes.',
-'- Luz natural y dura, con sombras marcadas, sobre tonos neutros (grises, hormigón, blanco roto).',
-'- El color lo pone la marca: un acento de Electric Lime o Midnight Navy.',
-'- Encuadres limpios, con aire para el logo o un mensaje corto.',
+'- Luz natural o de escena, con contraste y sombras; tonos neutros y fríos.',
+'- Un solo acento de color de la marca en la escena (Sky, Electric Lime o Midnight Navy).',
+'- Aire para el tagline o un mensaje corto, en Inter y en blanco sobre zonas oscuras.',
+'',
+'**Fondos abstractos** (`ATH_Gradiente_Radial.jpg`, `ATH_Gradiente_Grano.jpg`)',
+'',
+'- Gama Electric Lime, verde y Sky, sobre Cloud White o Midnight Navy.',
+'- Desenfocados, con grano sutil o con formas de vidrio translúcido; sin bordes duros ni ilustraciones planas.',
+'- Texto en Midnight Navy sobre zonas claras; blanco o Electric Lime sobre zonas oscuras.',
+'- Para portadas, aperturas de slides, heroes web, fondos de redes y video. Nunca detrás de textos largos.',
+'',
+'**Video** (`ATH_Gradiente_Animado.mp4`): gradiente animado en loop y sin sonido para heroes web, pantallas de evento, stories y reels. Encima solo el logo o una frase corta. MP4 H.264 con imagen de respaldo.',
 '',
 '**Aplicaciones:** isotipo grande y recortado en merch y señalética; lockup horizontal en papelería y pantallas; logo Black o Navy en soportes claros y White en oscuros.',
-'',
-'**Fondos abstractos** (`assets/05_Imagery`): gradientes desenfocados de Electric Lime a verde y Sky para portadas, slides de apertura, heroes web y redes. Texto encima en Midnight Navy o blanco con contraste; nunca detrás de textos largos.',
 '',
 '## 8. Iconografía',
 '',
@@ -699,7 +726,7 @@ function render(){
  document.getElementById('gridrows').innerHTML=GRID.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('');
  document.getElementById('radii').innerHTML=RAD.map(([k,px,u])=>`<div class="rad"><div style="border-radius:${Math.min(px,44)}px"></div><b>radius-${k} · ${px===9999?'full':px+' px'}</b><span>${u}</span></div>`).join('');
  document.getElementById('elev').innerHTML=ELEV.map(([k,v,u])=>`<div style="box-shadow:${v}"><b>shadow-${k}</b><span>${u}</span></div>`).join('');
- const files=manifest.length;
+ const files=manifest.filter(m=>m.group!=='imagery').length;
  document.getElementById('chips').innerHTML=[[files||78,'archivos de logo'],[MN.length+ZN.length+4,'colores'],[TYPE.length,'estilos de texto'],[SEM.length,'tokens semánticos']].map(([n,l])=>`<div class="chip"><b>${n}</b><span>${l}</span></div>`).join('');
  document.getElementById('icgrid').innerHTML=ICONS.map(([n,l])=>`<div><i data-lucide="${n}"></i>${l}</div>`).join('');
  document.getElementById('icnav').innerHTML=NAVDEMO.map(([n,l,on])=>`<div class="${on?'on':''}"><i data-lucide="${n}"></i>${l}</div>`).join('');

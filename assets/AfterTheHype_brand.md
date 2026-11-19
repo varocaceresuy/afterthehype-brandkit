@@ -1,6 +1,6 @@
 # After the Hype — Guía de marca para IA
 
-Identidad **Lima y Azul** · v1.1 · Identidad by Alvaro Cáceres · 2026
+Identidad **Lima y Azul** · v1.2 · Identidad by Alvaro Cáceres · 2026
 
 > Usa este documento como contexto para crear cualquier pieza de After the Hype: presentaciones, webs, apps, newsletters, redes sociales o documentos. Sigue estas reglas siempre; si algo no está definido aquí, elige la opción más sobria y con mejor contraste. Valores exactos en `AfterTheHype_tokens.json`.
 
@@ -162,16 +162,23 @@ Las sombras solo se usan en Light. En Dark la profundidad se resuelve con el sig
 
 **Tagline:** “Delivery obsessed, Human powered.”
 
-**Fotografía**
+**Fotografía** (referencia: `assets/05_Imagery/ATH_Foto_Delivery-Obsessed.jpg`)
 
 - Personas reales trabajando, en momentos espontáneos. Nada de poses de banco de imágenes.
-- Luz natural y dura, con sombras marcadas, sobre tonos neutros (grises, hormigón, blanco roto).
-- El color lo pone la marca: un acento de Electric Lime o Midnight Navy.
-- Encuadres limpios, con aire para el logo o un mensaje corto.
+- Luz natural o de escena, con contraste y sombras; tonos neutros y fríos.
+- Un solo acento de color de la marca en la escena (Sky, Electric Lime o Midnight Navy).
+- Aire para el tagline o un mensaje corto, en Inter y en blanco sobre zonas oscuras.
+
+**Fondos abstractos** (`ATH_Gradiente_Radial.jpg`, `ATH_Gradiente_Grano.jpg`)
+
+- Gama Electric Lime, verde y Sky, sobre Cloud White o Midnight Navy.
+- Desenfocados, con grano sutil o con formas de vidrio translúcido; sin bordes duros ni ilustraciones planas.
+- Texto en Midnight Navy sobre zonas claras; blanco o Electric Lime sobre zonas oscuras.
+- Para portadas, aperturas de slides, heroes web, fondos de redes y video. Nunca detrás de textos largos.
+
+**Video** (`ATH_Gradiente_Animado.mp4`): gradiente animado en loop y sin sonido para heroes web, pantallas de evento, stories y reels. Encima solo el logo o una frase corta. MP4 H.264 con imagen de respaldo.
 
 **Aplicaciones:** isotipo grande y recortado en merch y señalética; lockup horizontal en papelería y pantallas; logo Black o Navy en soportes claros y White en oscuros.
-
-**Fondos abstractos** (`assets/05_Imagery`): gradientes desenfocados de Electric Lime a verde y Sky para portadas, slides de apertura, heroes web y redes. Texto encima en Midnight Navy o blanco con contraste; nunca detrás de textos largos.
 
 ## 8. Iconografía
 
@@ -226,5 +233,6 @@ Respeta los tokens semánticos, Inter, la escala de 8 px, íconos Lucide y la re
 
 ## Versiones
 
+- **v1.2** (20 nov 2026): Imágenes de referencia de la marca: una fotografía, dos fondos abstractos y el gradiente animado en video, en reemplazo de las capturas del Figma. Reglas de uso de gradientes y video. El gradiente animado pasa a ser el fondo del inicio del Brand Kit.
 - **v1.1** (20 nov 2026): Nueva sección Imágenes: criterio fotográfico, uso en aplicaciones y fondos abstractos, con descarga en ZIP. Nueva sección Iconografía: Lucide como librería de la marca, con reglas de trazo, tamaño y color. Guía .md y tokens JSON actualizados con imágenes, iconografía y versión.
 - **v1.0** (20 nov 2026): Entrega inicial: logos en todos los formatos, favicon y app icons. Color: paleta primaria, escalas Midnight Navy y Zinc, tokens semánticos y regla de botones según el tema. Tipografía Inter, espaciado de 8 px, grid, radios y elevación. Uso correcto, guía .md y tokens para IA, acceso a Figma y descarga del .fig.
