@@ -84,10 +84,12 @@
     }
   },
   "typography": {
-    "family": "SF Pro",
-    "stack": "\"SF Pro Text\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Inter\",\"Segoe UI\",sans-serif",
-    "webFallback": "Inter",
+    "family": "Inter",
+    "stack": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif",
+    "license": "SIL Open Font License (gratuita)",
+    "source": "https://fonts.google.com/specimen/Inter",
     "weights": {
+      "light": 300,
       "regular": 400,
       "medium": 500,
       "semibold": 600,

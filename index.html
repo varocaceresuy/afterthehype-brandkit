@@ -8,18 +8,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <link rel="icon" href="assets/04_Favicon-AppIcon/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* VOICE: brand handoff manual — calm, exact, product-grade; the brand's colours do the talking.
    IDEA: a design-system reference app: fixed index on the left, each chapter a working spec.
    PICTURE: logos on approved grounds, live swatches, a type ladder and spacing rulers drawn at real size.
-   COLOUR and TYPE: #080808 / Midnight Navy surfaces, Electric Lime accent, Sky for focus; SF Pro with Inter fallback.
+   COLOUR and TYPE: #080808 / Midnight Navy surfaces, Electric Lime accent, Sky for focus; Inter throughout.
    LAYOUT: 272px sidebar with sliding indicator + spotlight; sticky top bar with theme switch; chapters stacked. */
 :root{color-scheme:dark;
  --navy:#111827;--lime:#DBFF00;--sky:#59C1F2;--cloud:#F7FAFC;
  --bg:#080808;--side:#0B0B0B;--card:#111111;--card2:#161616;--ink:#F7FAFC;--soft:#B5B5B5;--mute:#8A8A8A;--line:#1F1F1F;--line2:#2A2A2A;
  --accent:#DBFF00;--on-accent:#111827;--r:16px;--sw:272px;
- --sans:"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",system-ui,sans-serif}
+ --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
 :root[data-mode=light]{color-scheme:light;--accent:#111827;--on-accent:#F7FAFC;--bg:#F9FAFB;--side:#FFFFFF;--card:#FFFFFF;--card2:#F3F4F6;--ink:#111827;--soft:#4B5563;--mute:#6B7280;--line:#E5E7EB;--line2:#D1D5DB}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:80px;scroll-behavior:smooth}
@@ -121,7 +121,7 @@ tr:last-child td{border-bottom:0}
 .sv{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .sv span{width:20px;height:20px;border-radius:6px;border:1px solid var(--line2);flex:none}
 .spec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:16px}
-.specimen{font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;font-size:clamp(56px,9vw,112px);line-height:1;font-weight:600;letter-spacing:-.03em;margin:0}
+.specimen{font-family:Inter,system-ui,sans-serif;font-size:clamp(56px,9vw,112px);line-height:1;font-weight:600;letter-spacing:-.03em;margin:0}
 .weights{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;color:var(--soft);font-size:18px}
 .ladder .lr{display:grid;grid-template-columns:120px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
 .ladder .lr:last-child{border-bottom:0}
@@ -205,7 +205,7 @@ footer{color:var(--mute);font-size:13px;border:0}
   <a href="#zinc"><i></i>Zinc</a>
   <a href="#semantic"><i></i>Tokens semánticos</a>
   <h6>Tipografía</h6>
-  <a href="#tipografia"><i></i>SF Pro y escala UI</a>
+  <a href="#tipografia"><i></i>Inter y escala UI</a>
   <h6>Layout</h6>
   <a href="#spacing"><i></i>Espaciado y grid</a>
   <a href="#radius"><i></i>Radios y elevación</a>
@@ -286,12 +286,12 @@ footer{color:var(--mute);font-size:13px;border:0}
 </div></section>
 
 <section class="band" id="tipografia" data-t="Tipografía"><div class="wrap">
- <p class="eyebrow">Tipografía</p><h2>SF Pro y escala UI</h2>
- <p class="lead">SF Pro es la única familia de la marca. Para interfaces, la escala de abajo usa tamaños de 12 a 56 px e interlineados en múltiplos de 4.</p>
+ <p class="eyebrow">Tipografía</p><h2>Inter y escala UI</h2>
+ <p class="lead">Inter es la única familia de la marca, en web, producto, presentaciones e impresión. Para interfaces, la escala de abajo usa tamaños de 12 a 56 px e interlineados en múltiplos de 4.</p>
  <div class="spec">
   <p class="specimen">Aa Hype</p>
-  <div class="weights"><span style="font-weight:400">Regular 400</span><span style="font-weight:500">Medium 500</span><span style="font-weight:600">Semibold 600</span><span style="font-weight:700">Bold 700</span></div>
-  <p class="note">Font stack: <code>"SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif</code>. La licencia de SF Pro solo permite usarla en plataformas Apple, así que en web y Android la alternativa es Inter, con métricas muy parecidas.</p>
+  <div class="weights"><span style="font-weight:300">Light 300</span><span style="font-weight:400">Regular 400</span><span style="font-weight:500">Medium 500</span><span style="font-weight:600">Semi Bold 600</span><span style="font-weight:700">Bold 700</span></div>
+  <p class="note">Font stack: <code>"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif</code>. Inter es gratuita y de código abierto (licencia SIL Open Font License): se puede usar en web, apps e impresión. Se descarga desde <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Google Fonts</a> o <a href="https://rsms.me/inter/" target="_blank" rel="noopener">rsms.me/inter</a>.</p>
  </div>
  <h3 class="sh">Escala UI <span class="tag-p">Propuesta</span></h3>
  <div class="spec ladder" id="ladder"></div>
@@ -404,7 +404,7 @@ function tokens(){
  return {brand:'After the Hype',identity:'Lima y Azul',version:'1.0',
   principles:['Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos).','Midnight Navy es el color principal; Electric Lime es el acento.','Botones y controles (action): en Dark usan Electric Lime con texto midnight-navy/900; en Light usan midnight-navy/900 con texto cloud-white. Electric Lime con texto blanco no cumple contraste.','Electric Lime en Light solo para chips, badges y destacados (highlight), siempre con texto midnight-navy/900.','Usar tokens semánticos, no HEX, para que los componentes funcionen en light y dark.','Dark mode: fondo midnight-navy/950; light mode: fondo midnight-navy/100.'],
   color,semantic,
-  typography:{family:'SF Pro',stack:'"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif',webFallback:'Inter',weights:{regular:400,medium:500,semibold:600,bold:700},scale:Object.fromEntries(TYPE.map(([k,s,l,w,ls,u])=>[k,{size:s,lineHeight:l,weight:w,letterSpacing:ls,use:u}]))},
+  typography:{family:'Inter',stack:'"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',license:'SIL Open Font License (gratuita)',source:'https://fonts.google.com/specimen/Inter',weights:{light:300,regular:400,medium:500,semibold:600,bold:700},scale:Object.fromEntries(TYPE.map(([k,s,l,w,ls,u])=>[k,{size:s,lineHeight:l,weight:w,letterSpacing:ls,use:u}]))},
   spacing:Object.fromEntries(SPACE.map(([px,k])=>[k,px])),
   radius:Object.fromEntries(RAD.map(([k,px])=>[k,px])),
   elevation:Object.fromEntries(ELEV.map(([k,v])=>[k,v])),
@@ -414,7 +414,7 @@ function tokens(){
 function cssVars(){
  const L=[':root {','  /* Brand */',...PAL.map(([n,k,h])=>`  --color-${k}: ${h};`),'  /* Midnight Navy */',...MN.map(([s,h])=>`  --midnight-navy-${s}: ${h};`),'  /* Zinc */',...ZN.map(([s,h])=>`  --zinc-${s}: ${h};`),'  --color-deep-sky: #1E6E96;','',
   '  /* Semantic · light */',...SEM.map(([k,l])=>`  --${k.replace('/','-')}: ${HEX[l]};`),'',
-  '  /* Typography */','  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;',...TYPE.map(([k,s,l,w])=>`  --text-${k}: ${w} ${s}px/${l}px var(--font-sans);`),'',
+  '  /* Typography */','  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;',...TYPE.map(([k,s,l,w])=>`  --text-${k}: ${w} ${s}px/${l}px var(--font-sans);`),'',
   '  /* Spacing (8 px) */',...SPACE.map(([px,k])=>`  --space-${k.replace('.','_')}: ${px}px;`),'',
   '  /* Radius */',...RAD.map(([k,px])=>`  --radius-${k}: ${px}px;`),'',
   '  /* Elevation */',...ELEV.map(([k,v])=>`  --shadow-${k}: ${v};`),'}','',
