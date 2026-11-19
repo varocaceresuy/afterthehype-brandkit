@@ -262,7 +262,6 @@ footer{color:var(--mute);font-size:13px;border:0}
   <h6>Entrega</h6>
   <a href="#tokens"><i></i>Guía y tokens para IA</a>
   <a href="#uso"><i></i>Uso correcto</a>
-  <a href="#versiones"><i></i>Versiones</a>
  </nav>
  <div class="side-foot">
   <div class="fig">
@@ -438,12 +437,6 @@ footer{color:var(--mute);font-size:13px;border:0}
  <div class="dd" id="dos"></div>
  <h3 class="sh dd-h"><span class="bd no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No</h3>
  <div class="dd" id="donts"></div>
-</div></section>
-
-<section class="band" id="versiones" data-t="Versiones"><div class="wrap">
- <p class="eyebrow">Entrega</p><h2>Versiones</h2>
- <p class="lead">Cada cambio en el Brand Kit suma una versión. Esta es la <b>v<span class="ver">1.1</span></b>.</p>
- <div class="panel log" id="changelog"></div>
 </div></section>
 
 <footer class="band"><div class="wrap">© 2026 After the Hype. Brand Kit generado desde el Brand Guidelines de Figma.</div></footer>
@@ -687,10 +680,6 @@ tbl(['Sombra','Valor','Uso'],ELEV.map(([k,v,u])=>['`shadow-'+k+'`','`'+v+'`',u])
 'Crea [pieza: landing / slide / post / newsletter] en modo [Dark / Light] para [objetivo].',
 'Respeta los tokens semánticos, Inter, la escala de 8 px, íconos Lucide y la regla de botones según el tema.',
 '```',
-'',
-'## Versiones',
-'',
-...CHANGELOG.map(([v,d,items])=>'- **v'+v+'** ('+d+'): '+items.join(' ')),
 ''].join('\n');
 }
 let tab='md';
@@ -731,7 +720,6 @@ function render(){
  document.getElementById('icgrid').innerHTML=ICONS.map(([n,l])=>`<div><i data-lucide="${n}"></i>${l}</div>`).join('');
  document.getElementById('icnav').innerHTML=NAVDEMO.map(([n,l,on])=>`<div class="${on?'on':''}"><i data-lucide="${n}"></i>${l}</div>`).join('');
  if(window.lucide&&lucide.createIcons)lucide.createIcons();
- document.getElementById('changelog').innerHTML=CHANGELOG.map(([v,d,items])=>`<div class="lv"><div><b>v${v}</b><span>${d}</span></div><ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
  document.querySelectorAll('.ver').forEach(e=>e.textContent=VERSION);
  document.getElementById('dos').innerHTML=exs(DOS,true);
  document.getElementById('donts').innerHTML=exs(DONTS,false);

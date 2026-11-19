@@ -230,9 +230,3 @@ Usa la guía de marca de After the Hype adjunta (AfterTheHype_brand.md y AfterTh
 Crea [pieza: landing / slide / post / newsletter] en modo [Dark / Light] para [objetivo].
 Respeta los tokens semánticos, Inter, la escala de 8 px, íconos Lucide y la regla de botones según el tema.
 ```
-
-## Versiones
-
-- **v1.2** (20 nov 2026): Imágenes de referencia de la marca: una fotografía, dos fondos abstractos y el gradiente animado en video, en reemplazo de las capturas del Figma. Reglas de uso de gradientes y video. El gradiente animado pasa a ser el fondo del inicio del Brand Kit.
-- **v1.1** (20 nov 2026): Nueva sección Imágenes: criterio fotográfico, uso en aplicaciones y fondos abstractos, con descarga en ZIP. Nueva sección Iconografía: Lucide como librería de la marca, con reglas de trazo, tamaño y color. Guía .md y tokens JSON actualizados con imágenes, iconografía y versión.
-- **v1.0** (20 nov 2026): Entrega inicial: logos en todos los formatos, favicon y app icons. Color: paleta primaria, escalas Midnight Navy y Zinc, tokens semánticos y regla de botones según el tema. Tipografía Inter, espaciado de 8 px, grid, radios y elevación. Uso correcto, guía .md y tokens para IA, acceso a Figma y descarga del .fig.
