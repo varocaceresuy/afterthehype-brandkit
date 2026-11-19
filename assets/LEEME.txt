@@ -1,10 +1,14 @@
-AFTER THE HYPE — ASSET KIT DE MARCA (Lima y Azul)
+AFTER THE HYPE — BRAND KIT (Lima y Azul)
 
-Carpetas
+Abre AfterTheHype_BrandKit.html (en la raíz del ZIP) con doble clic para ver el Brand Kit completo en local.
+Versión online: https://afterthehype-brandkit.vercel.app
+
+Carpetas (dentro de assets/)
   01_Logo-Horizontal  Lockup principal (isotipo + wordmark)
   02_Logo-Vertical    Isotipo sobre wordmark
   03_Isotipo          Solo el símbolo AH
   04_Favicon-AppIcon  favicon.ico/.svg, apple-touch-icon, app icons
+  05_Imagery          Fotografía, fondos abstractos y gradiente animado (MP4)
 
 Para IA
   AfterTheHype_brand.md     Guía de marca en texto: cárgala primero en Claude, ChatGPT, v0 o Cursor

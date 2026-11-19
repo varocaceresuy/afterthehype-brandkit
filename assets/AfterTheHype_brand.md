@@ -1,6 +1,6 @@
 # After the Hype — Guía de marca para IA
 
-Identidad **Lima y Azul** · v1.2 · Identidad by Alvaro Cáceres · 2026
+Identidad **Lima y Azul** · v1.3 · Identidad by Alvaro Cáceres · 2026
 
 > Usa este documento como contexto para crear cualquier pieza de After the Hype: presentaciones, webs, apps, newsletters, redes sociales o documentos. Sigue estas reglas siempre; si algo no está definido aquí, elige la opción más sobria y con mejor contraste. Valores exactos en `AfterTheHype_tokens.json`.
 
