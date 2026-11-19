@@ -141,8 +141,8 @@ tr:last-child td{border-bottom:0}
 .elev div span{color:#6B7280;font-size:12px}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .code{position:relative;background:#0C111B;color:#E5E7EB;border:1px solid var(--line);border-radius:var(--r);margin:0}
-.code pre{margin:0;padding:20px;max-height:420px;overflow:auto;font:500 12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
-.code .row{position:absolute;top:12px;right:12px}
+.code pre{white-space:pre-wrap;word-break:break-word;margin:0;padding:20px;padding-top:64px;max-height:420px;overflow:auto;font:500 12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
+.code .row{position:absolute;top:12px;right:12px}.code [hidden]{display:none}
 .code .btn.sm{background:#111827;color:#F7FAFC;box-shadow:inset 0 0 0 1px #374151}
 .tabs{display:inline-flex;gap:4px;padding:4px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
 .tabs button{font:500 13px/1 var(--sans);border:0;background:transparent;color:var(--mute);min-height:32px;padding:0 12px;border-radius:7px;cursor:pointer}
@@ -210,7 +210,7 @@ footer{color:var(--mute);font-size:13px;border:0}
   <a href="#spacing"><i></i>Espaciado y grid</a>
   <a href="#radius"><i></i>Radios y elevación</a>
   <h6>Entrega</h6>
-  <a href="#tokens"><i></i>Tokens para IA</a>
+  <a href="#tokens"><i></i>Guía y tokens para IA</a>
   <a href="#uso"><i></i>Uso correcto</a>
  </nav>
  <div class="side-foot">
@@ -242,7 +242,7 @@ footer{color:var(--mute);font-size:13px;border:0}
  <img class="lockup for-light" src="assets/01_Logo-Horizontal/SVG/ATH_Logo-Horizontal_Navy.svg" alt="After the Hype">
  <h1>Brand Kit</h1>
  <p>Todo lo necesario para usar la identidad de After the Hype, Lima y Azul: logos en todos sus formatos, color, tipografía, espaciado, radios y los tokens listos para pasar a una IA o a código.</p>
- <div class="row"><button class="btn" data-zip="all">Descargar kit completo (.zip)</button><a class="btn ghost" href="#tokens">Ver tokens para IA</a></div>
+ <div class="row"><button class="btn" data-zip="all">Descargar kit completo (.zip)</button><a class="btn ghost" href="#tokens">Guía para IA (.md)</a></div>
  <div class="chips" id="chips"></div>
 </div></section>
 
@@ -315,11 +315,11 @@ footer{color:var(--mute);font-size:13px;border:0}
  <div class="elev" id="elev"></div>
 </div></section>
 
-<section class="band" id="tokens" data-t="Tokens para IA"><div class="wrap">
- <p class="eyebrow">Entrega</p><h2>Tokens para IA</h2>
- <p class="lead">Todos los criterios de esta página en formato máquina. Pega el JSON en una IA (Claude, v0, Cursor…) junto a tu pedido, o usa las variables CSS directamente en código.</p>
- <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="json">JSON</button><button role="tab" aria-selected="false" data-tab="css">CSS variables</button></div>
- <div class="code"><div class="row"><button class="btn sm" id="copycode">Copiar</button><button class="btn sm" id="dljson">Descargar .json</button></div><pre id="codeout"></pre></div>
+<section class="band" id="tokens" data-t="Guía y tokens para IA"><div class="wrap">
+ <p class="eyebrow">Entrega</p><h2>Guía y tokens para IA</h2>
+ <p class="lead">Todos los criterios de esta página listos para una IA. El <b>Markdown</b> explica las reglas en texto y es lo primero que hay que cargar en un proyecto de Claude, ChatGPT, v0 o Cursor; el <b>JSON</b> trae los valores exactos y las <b>variables CSS</b> sirven para usarlos directo en código.</p>
+ <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="md">Markdown</button><button role="tab" aria-selected="false" data-tab="json">JSON</button><button role="tab" aria-selected="false" data-tab="css">CSS variables</button></div>
+ <div class="code"><div class="row"><button class="btn sm" id="copycode">Copiar</button><button class="btn sm" id="dljson">Descargar .md</button></div><pre id="codeout"></pre></div>
 </div></section>
 
 <section class="band" id="uso" data-t="Uso correcto"><div class="wrap">
@@ -422,8 +422,121 @@ function cssVars(){
  return L.join('\n');
 }
 
-let tab='json';
-function showCode(){document.getElementById('codeout').textContent=tab==='json'?JSON.stringify(tokens(),null,2):cssVars();
+function mdDoc(){
+ const row=a=>'| '+a.join(' | ')+' |';
+ const tbl=(head,rows)=>[row(head),row(head.map(()=>'---')),...rows.map(row)].join('\n');
+ return [
+'# After the Hype — Guía de marca para IA',
+'',
+'Identidad **Lima y Azul** · v1.0 · Identidad by Alvaro Cáceres · 2026',
+'',
+'> Usa este documento como contexto para crear cualquier pieza de After the Hype: presentaciones, webs, apps, newsletters, redes sociales o documentos. Sigue estas reglas siempre; si algo no está definido aquí, elige la opción más sobria y con mejor contraste. Valores exactos en `AfterTheHype_tokens.json`.',
+'',
+'## 1. Principios',
+'',
+'- Midnight Navy (`#111827`) es el color principal. Electric Lime (`#DBFF00`) es el acento.',
+'- **Botones y controles (action):** en Dark van en Electric Lime con texto Midnight Navy; en Light van en Midnight Navy con texto Cloud White. Electric Lime nunca lleva texto blanco.',
+'- En Light, Electric Lime solo se usa en chips, badges, etiquetas y destacados, siempre con texto Midnight Navy. Nunca como color de texto sobre fondos claros.',
+'- Todo espaciado, radio y tamaño en múltiplos de 8 px (4 px solo para ajustes finos, como icono-texto).',
+'- Usa tokens semánticos, no HEX sueltos, para que todo funcione en Light y Dark.',
+'- Fondo de página: Midnight Navy 950 en Dark, Midnight Navy 100 en Light.',
+'- Tipografía única: Inter.',
+'',
+'## 2. Logo',
+'',
+'- **Versiones:** horizontal (principal), vertical e isotipo (símbolo AH solo).',
+'- **Colores aprobados del logo:** Navy `#111827`, Black `#000000`, White `#F7FAFC`. Nunca Lima ni otros colores.',
+'- **Combinaciones aprobadas:**',
+'  - Black sobre Cloud White',
+'  - Navy sobre Electric Lime',
+'  - White sobre Midnight Navy',
+'  - Navy sobre Sky',
+'- **Área de respeto:** como mínimo, la altura del isotipo alrededor del logo.',
+'- **No:** deformar, recolorear, rotar, aplicar sombras, degradados o efectos, ni usarlo con bajo contraste.',
+'- **Archivos:** `assets/01_Logo-Horizontal`, `02_Logo-Vertical`, `03_Isotipo` (SVG, PDF, PNG, JPG) y `04_Favicon-AppIcon`.',
+'',
+'## 3. Color',
+'',
+'### Paleta primaria',
+'',
+tbl(['Nombre','Token','HEX','RGB','CMYK'],PAL.map(([n,k,h,r,c])=>[n,'`'+k+'`','`'+h+'`',r.replace(/ · /g,', '),c.replace(/ · /g,', ')])),
+'',
+'Color secundario de apoyo para links en Light: Deep Sky `#1E6E96`.',
+'',
+'### Escala Midnight Navy (base de la interfaz)',
+'',
+tbl(['Paso','HEX'],MN.map(([s,h,t])=>['`midnight-navy/'+s+'`'+(t?' ('+t+')':''),'`'+h+'`'])),
+'',
+'### Escala Zinc (superficies secundarias, divisores, deshabilitado)',
+'',
+tbl(['Paso','HEX'],ZN.map(([s,h])=>['`zinc/'+s+'`','`'+h+'`'])),
+'',
+'### Tokens semánticos',
+'',
+tbl(['Token','Light','Dark','Uso'],SEM.map(([k,l,d,u])=>['`'+k+'`','`'+l+'` '+HEX[l],'`'+d+'` '+HEX[d],u])),
+'',
+'## 4. Tipografía',
+'',
+'- **Familia:** Inter (gratuita, licencia SIL Open Font License). Google Fonts: https://fonts.google.com/specimen/Inter',
+'- **Font stack:** `"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`',
+'- **Pesos:** Light 300, Regular 400, Medium 500, Semi Bold 600, Bold 700. Títulos en Semi Bold, texto en Regular, labels y botones en Medium.',
+'',
+'### Escala UI',
+'',
+tbl(['Estilo','Tamaño','Interlineado','Peso','Tracking','Uso'],TYPE.map(([k,s,l,w,ls,u])=>['`'+k+'`',s+' px',l+' px',w,ls,u])),
+'',
+'## 5. Espaciado y grid',
+'',
+tbl(['Token','Valor','Uso'],SPACE.map(([px,k,u])=>['`space-'+k+'`',px+' px',u])),
+'',
+'Contenedor máximo: 1280 px.',
+'',
+tbl(['Breakpoint','Ancho','Columnas','Gutter','Margen'],GRID),
+'',
+'## 6. Radios y elevación',
+'',
+tbl(['Token','Valor','Uso'],RAD.map(([k,px,u])=>['`radius-'+k+'`',px===9999?'9999 px (full)':px+' px',u])),
+'',
+tbl(['Sombra','Valor','Uso'],ELEV.map(([k,v,u])=>['`shadow-'+k+'`','`'+v+'`',u])),
+'',
+'Las sombras solo se usan en Light. En Dark la profundidad se resuelve con el siguiente tono de superficie y un borde de 1 px (`border/default`).',
+'',
+'## 7. Componentes base (criterio)',
+'',
+'- **Botón principal:** fondo `action/bg`, texto `action/fg`, `radius-sm` (8 px), alto 40–48 px, padding horizontal 16–24 px, estilo `label`.',
+'- **Botón secundario:** transparente, borde 1 px `border/strong`, texto `text/primary`.',
+'- **Input:** fondo `bg/muted`, borde `border/strong`, `radius-sm`, alto 40–48 px; foco con anillo `focus/ring` de 2 px.',
+'- **Card:** fondo `bg/surface`, borde `border/default`, `radius-md` (16 px), padding `space-3` (24 px); en Light, `shadow-e1`.',
+'- **Chip o badge:** `highlight/bg` con texto `highlight/fg`, `radius-full`, estilo `caption`.',
+'',
+'## 8. Uso correcto',
+'',
+'**Sí**',
+'',
+...DOS.map(([,t,d])=>'- '+t+': '+d),
+'',
+'**No**',
+'',
+...DONTS.map(([,t,d])=>'- '+t+': '+d),
+'',
+'## 9. Recursos',
+'',
+'- **Brand Kit online:** https://afterthehype-brandkit.vercel.app',
+'- **Figma (presentación de marca):** '+FIGMA,
+'- **Tokens:** `AfterTheHype_tokens.json`',
+'',
+'## 10. Cómo pedirle algo a una IA',
+'',
+'```',
+'Usa la guía de marca de After the Hype adjunta (AfterTheHype_brand.md y AfterTheHype_tokens.json).',
+'Crea [pieza: landing / slide / post / newsletter] en modo [Dark / Light] para [objetivo].',
+'Respeta los tokens semánticos, Inter, la escala de 8 px y la regla de botones según el tema.',
+'```',
+''].join('\n');
+}
+let tab='md';
+function showCode(){document.getElementById('codeout').textContent=tab==='md'?mdDoc():tab==='json'?JSON.stringify(tokens(),null,2):cssVars();
+ const dj=document.getElementById('dljson');dj.hidden=tab==='css';dj.textContent=tab==='md'?'Descargar .md':'Descargar .json';
  document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)))}
 
 function render(){
@@ -501,7 +614,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav()});
 document.addEventListener('click',async e=>{
  const mb=e.target.closest('[data-mode-set]');if(mb){setMode(mb.dataset.modeSet);return}
  const tb=e.target.closest('[data-tab]');if(tb){tab=tb.dataset.tab;showCode();return}
- if(e.target.closest('#copycode')){try{await navigator.clipboard.writeText(document.getElementById('codeout').textContent);say(tab==='json'?'JSON copiado':'CSS copiado')}catch{say('No se pudo copiar')}return}
+ if(e.target.closest('#copycode')){try{await navigator.clipboard.writeText(document.getElementById('codeout').textContent);say(tab==='md'?'Markdown copiado':tab==='json'?'JSON copiado':'CSS copiado')}catch{say('No se pudo copiar')}return}
  const fb=e.target.closest('#dlfig');
  if(fb){if(fb.disabled)return;
   const t=fb.textContent;fb.disabled=true;const parts=[];
@@ -512,7 +625,7 @@ document.addEventListener('click',async e=>{
   catch(err){fb.textContent=t;fb.disabled=false;if(err&&err.code==='declined')return;say('No se pudo descargar el .fig')}
   return}
  if(e.target.closest('#dljson')){
-  try{await saveFile('AfterTheHype_tokens.json',JSON.stringify(tokens(),null,2));say('Tokens descargados')}catch(err){if(err&&err.code==='declined')return;say('No se pudo descargar')}return}
+  try{if(tab==='md'){await saveFile('AfterTheHype_brand.md',mdDoc());say('Guía .md descargada')}else{await saveFile('AfterTheHype_tokens.json',JSON.stringify(tokens(),null,2));say('Tokens descargados')}}catch(err){if(err&&err.code==='declined')return;say('No se pudo descargar')}return}
  const c=e.target.closest('[data-copy]');
  if(c){try{await navigator.clipboard.writeText(c.dataset.copy);say((c.dataset.copy==='ATH.2026'?'Contraseña':c.dataset.copy)+' copiado'.replace('copiado',c.dataset.copy==='ATH.2026'?'copiada':'copiado'))}catch{say('No se pudo copiar')}return}
  const z=e.target.closest('[data-zip]');
@@ -523,7 +636,7 @@ document.addEventListener('click',async e=>{
   z.disabled=true;const t=z.textContent;z.textContent='Preparando ZIP…';
   try{const zip=new JSZip();
    await Promise.all([...sel.map(m=>m.path),'assets/LEEME.txt'].map(async p=>{const r=await fetch(p);if(r.ok)zip.file(p.replace(/^assets\//,''),await r.blob())}));
-   if(k==='all')zip.file('AfterTheHype_tokens.json',JSON.stringify(tokens(),null,2));
+   if(k==='all'){zip.file('AfterTheHype_tokens.json',JSON.stringify(tokens(),null,2));zip.file('AfterTheHype_brand.md',mdDoc())}
    const blob=await zip.generateAsync({type:'blob'});z.textContent=t;z.disabled=false;
    await saveFile(zname,blob);say(zname+' descargado')}
   catch(err){z.textContent=t;z.disabled=false;if(err&&err.code==='declined')return;say('No se pudo descargar '+zname)}

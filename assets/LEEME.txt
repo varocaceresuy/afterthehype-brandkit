@@ -6,6 +6,10 @@ Carpetas
   03_Isotipo          Solo el símbolo AH
   04_Favicon-AppIcon  favicon.ico/.svg, apple-touch-icon, app icons
 
+Para IA
+  AfterTheHype_brand.md     Guía de marca en texto: cárgala primero en Claude, ChatGPT, v0 o Cursor
+  AfterTheHype_tokens.json  Valores exactos (color, tipografía Inter, espaciado, radios)
+
 Formatos
   SVG  Vector para web y producto
   PDF  Vector para imprenta y documentos
