@@ -7,6 +7,6 @@ Brand Kit de la identidad **Lima y Azul** de After the Hype: logos en todos sus 
 - `zips/` — paquetes descargables.
 - `vercel.json` — cabeceras (noindex, caché).
 
-Para enlazar una descarga directa del archivo .fig, completa `FIG_URL` en `index.html`.
+El archivo .fig se descarga desde Google Drive (link en `FIG_URL`, dentro de `index.html`).
 
 Identidad by Alvaro Cáceres · 2026
